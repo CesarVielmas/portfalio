@@ -1,0 +1,57 @@
+{
+    "header_home":{
+        "PART_PROYECT_HEADER":"Projects",
+        "PART_INFORMATION_HEADER":"About Me",
+        "PART_CONTACT_HEADER":"Contact",
+        "PART_PROCESS_HEADER":"Deployment",
+        "PART_PROYECT_HEADER_WEB":"WEB",
+        "PART_PROYECT_HEADER_MOBILE":"MOBILE",
+        "PART_PROYECT_HEADER_DESKTOP":"DESKTOP",
+        "PART_PROYECT_HEADER_BACKEND":"BACKEND",
+        "PART_PROYECT_HEADER_OTHERS":"OTHERS",
+        "PART_PROYECT_HEADER_LANGUAGE_ES":"SPANISH",
+        "PART_PROYECT_HEADER_LANGUAGE_EN":"ENGLISH"
+    },
+    "home_apart":{
+        "PART_PRESENTATION_HEADER":"HELLO WORLD",
+        "PART1_PRESENTATION_HOME":"Hi, I'm Cesar Vielmas",
+        "PART2_PRESENTATION_HOME":"Software Engineer.",
+        "PART_PRESENTATION_CONTENT":"Hi! I’m César Vielmas, a Software Engineer with an insatiable curiosity and a passion for building things that really work. I love taking ideas and transforming them into desktop, mobile, or web applications, always keeping user experience and performance front and center.On a daily basis, I explore new technologies, streamline workflows, and craft small tools that save time and boost productivity.",
+        "SOME_LANGUAGES_TITTLE":"Programming Languages",
+        "some_languages":{
+            "TITTLE_LANGUAGE_C": "C Language",
+            "CONTENT_LANGUAGE_C": "I used C primarily for academic projects and small terminal-based applications without any graphical user interface. It also helped me grasp core programming concepts and terminology, serving as a foundation to adapt more easily to other languages.",
+
+            "TITTLE_LANGUAGE_CPP": "C++ Language",
+            "CONTENT_LANGUAGE_CPP": "I used C++ for both academic purposes and more advanced projects. I created simple graphical user interfaces and later progressed to building dynamic-link libraries (DLLs), games using external libraries, and other complex applications.",
+
+            "TITTLE_LANGUAGE_PYTHON": "Python Language",
+            "CONTENT_LANGUAGE_PYTHON": "I have used Python to develop moderately complex applications, including basic games with libraries, websites, web APIs, and various scripts. Its versatility has made it a valuable tool in different areas of development.",
+
+            "TITTLE_LANGUAGE_JAVASCRIPT": "JavaScript Language",
+            "CONTENT_LANGUAGE_JAVASCRIPT": "JavaScript is one of the core languages I have mastered. I’ve used it extensively across multiple frameworks such as React, Angular, and Vue.js, as well as in vanilla JavaScript projects. It has been central to my front-end and full-stack development experience.",
+
+            "TITTLE_LANGUAGE_TYPESCRIPT": "TypeScript Language",
+            "CONTENT_LANGUAGE_TYPESCRIPT": "I have used TypeScript in conjunction with frameworks like React, Angular, and Vue.js. Its strong typing and enhanced developer experience have made it a preferred choice for building scalable, maintainable front-end applications.",
+
+            "TITTLE_LANGUAGE_CSHARP": "C# Language",
+            "CONTENT_LANGUAGE_CSHARP": "C# is another language I’ve gained strong proficiency in. I’ve used it for backend development, desktop applications, and web projects using frameworks such as Blazor, showcasing its power in both enterprise and personal projects.",
+
+            "TITTLE_LANGUAGE_KOTLIN": "Kotlin Language",
+            "CONTENT_LANGUAGE_KOTLIN": "I am currently learning and using Kotlin for ongoing projects involving Gradle and the Android SDK. Its modern syntax and seamless interoperability with Java make it a promising tool in mobile and backend development.",
+
+            "TITTLE_LANGUAGE_R": "R Language",
+            "CONTENT_LANGUAGE_R": "I have used R for basic academic projects, primarily involving data analysis. However, I often favor Python due to its extensive libraries and ecosystem for data science and machine learning.",
+
+            "TITTLE_LANGUAGE_SQL": "SQL Language",
+            "CONTENT_LANGUAGE_SQL": "SQL is my primary language for working with relational databases. I’ve used it in environments such as SQL Server, SQLite, and MySQL, enabling me to perform efficient data modeling, querying, and management.",
+
+            "TITTLE_LANGUAGE_JAVA": "Java Language",
+            "CONTENT_LANGUAGE_JAVA": "I have used Java for a few desktop applications and plan to revisit it for developing more robust and optimized solutions. Its strong foundations and versatility make it ideal for scalable, professional-grade applications."
+        },
+        "SOME_TECHNOLOGYS_TITTLE":"Technologies and Tools",
+        "SOME_TECHNOLOGYS_SUBTITTLE_ONE":"Frequently Technologies",
+        "SOME_TECHNOLOGYS_SUBTITTLE_TWO":"Frequently Tools"
+
+    }
+}

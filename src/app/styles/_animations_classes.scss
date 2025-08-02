@@ -1,0 +1,118 @@
+@use "@app/styles/_animations.scss" as anim;
+:root {
+  // Variables globales
+  // hover underline
+  --global-underline-color: black;
+  --global-underline-height: 2px;
+  --global-underline-duration: 0.3s;
+  --global-underline-timing: ease-out;
+  //hover scale
+  --global-scale-duration:0.3s;
+  --global-scale-timing:ease-out;
+  --global-scale-cuantity:1.1;
+  //click scale
+  --global-click-scale-duration:0.5s;
+  --global-click-scale-timing:ease-out;
+  --global-click-scale-percentage:1.1;
+  //click rotate
+  --global-click-rotate-duration:0.5s;
+  --global-click-rotate-timing:ease-out;
+  --global-click-rotate-initial:'0deg';
+  --global-click-rotate-final:'160deg';
+  //appear height
+  --global-appear-height-zero-duration:0.5s;
+  --global-appear-height-zero-timing:ease-out;
+  --global-appear-height-zero-height:200px;
+  //appear width
+  --global-appear-width-zero-duration:0.5s;
+  --global-appear-width-zero-timing:ease-out;
+  --global-appear-width-zero-width:200px;
+  //appear movement y with opacity
+  --global-appear-movement-y-with-opacity-duration:0.5s;
+  --global-appear-movement-y-with-opacity-timing:ease-out;
+  --global-appear-movement-y-with-opacity-distance:'-10%';
+  //text change color
+  --global-text-change-color-duration:1s;
+  --global-text-change-color-timing:ease-out;
+  --global-text-change-color-initial:white;
+  --global-text-change-color-final:black;
+}
+
+.hover-underline-animation {
+  --underline-color: var(--global-underline-color);
+  --underline-height: var(--global-underline-height);
+  --underline-duration: var(--global-underline-duration);
+  --underline-timing: var(--global-underline-timing);
+  cursor: pointer;
+  @include anim.animate-underline-hover(in);
+}
+
+.hover-underline-animation-leave {
+  --underline-color: var(--global-underline-color);
+  --underline-height: var(--global-underline-height);
+  --underline-duration: var(--global-underline-duration);
+  --underline-timing: var(--global-underline-timing);
+  @include anim.animate-underline-hover(out);
+}
+.hover-scale-animation{
+  --scale-duration: var(--global-scale-duration);
+  --scale-timing: var(--global-scale-timing);
+  --scale-cuantity:var(--global-scale-cuantity);
+  cursor: pointer;
+  @include anim.animate-scale-hover(in);
+}
+.hover-scale-animation-leave{
+  --scale-duration: var(--global-scale-duration);
+  --scale-timing: var(--global-scale-timing);
+  --scale-cuantity:var(--global-scale-cuantity);
+  @include anim.animate-scale-hover(out);
+}
+.click-scale-animation-in{
+ --scale-click-duration: var(--global-click-scale-duration);
+ --scale-click-timing: var(--global-click-scale-timing);
+ --scale-click-percentage: var(--global-click-scale-percentage);
+ @include anim.animate-scale-click(in)
+}
+.click-scale-animation-out{
+ --scale-click-duration: var(--global-click-scale-duration);
+ --scale-click-timing: var(--global-click-scale-timing);
+ --scale-click-percentage: var(--global-click-scale-percentage);
+ @include anim.animate-scale-click(out)
+}
+.click-rotate-animation{
+  --rotate-click-duration: var(--global-click-rotate-duration);
+  --rotate-click-timing: var(--global-click-rotate-timing);
+  --rotate-click-initial: var(--global-click-rotate-initial);
+  --rotate-click-final: var(--global-click-rotate-final);
+  will-change:transform;
+  animation: rotate-element-click var(--rotate-click-duration, 0.3s) var(--rotate-click-timing, ease-out) forwards;
+}
+.appear-height-zero-animation{
+  --height-zero-appear-duration:var(--global-appear-height-zero-duration);
+  --height-zero-appear-timing:var(--global-appear-height-zero-timing);
+  --height-zero-appear-height:var(--global-appear-height-zero-height);
+  will-change:height;
+  animation: height-zero-appear var(--height-zero-appear-duration, 0.3s) var(--height-zero-appear-timing, ease-out) forwards;
+}
+.appear-width-zero-animation{
+  --width-zero-appear-duration:var(--global-appear-width-zero-duration);
+  --width-zero-appear-timing:var(--global-appear-width-zero-timing);
+  --width-zero-appear-width:var(--global-appear-width-zero-width);
+  will-change:width;
+  animation: width-zero-appear var(--width-zero-appear-duration, 0.3s) var(--width-zero-appear-timing, ease-out) forwards;
+}
+.appear-movement-y-with-opacity-animation{
+  --movement-y-with-opacity-appear-duration:var(--global-appear-movement-y-with-opacity-duration);
+  --movement-y-with-opacity-appear-timing:var(--global-appear-movement-y-with-opacity-timing);
+  --movement-y-with-opacity-appear-distance:var(--global-appear-movement-y-with-opacity-distance);
+  will-change:transform;
+  animation: movement-y-with-opacity-appear var(--movement-y-with-opacity-appear-duration, 0.5s) var(--movement-y-with-opacity-appear-timing, ease-out) forwards;
+}
+.text-change-color{
+  --text-change-color-duration:var(--global-text-change-color-duration);
+  --text-change-color-timing:var(--global-text-change-color-timing);
+  --text-change-color-initial:var(--global-text-change-color-initial);
+  --text-change-color-final:var(--global-text-change-color-final);
+  will-change: color;
+  animation: text-change-color var(--text-change-color-duration,0.5s) var(--text-change-color-timing,ease-out) forwards;
+}

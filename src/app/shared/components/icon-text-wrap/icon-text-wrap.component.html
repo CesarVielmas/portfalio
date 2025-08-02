@@ -1,0 +1,11 @@
+@if(iconUrl != null && iconUrl !== '') {
+    @if(getIncludesUrlIcon()){
+        <i [ngStyle]="iconStyle" [typeAnimation]="getTypeAnimation('icon')" [animationStyle]="getAnimationStyle('icon')" class="material-icons" (click)="functionCall()">{{ iconUrl }}</i>
+    }
+    @else{
+        <img [src]="iconUrl" alt="Icon" class="icon" [ngStyle]="iconStyle" [typeAnimation]="getTypeAnimation('icon')" [animationStyle]="getAnimationStyle('icon')" (click)="functionCall()" />
+    }
+}
+@if(text != null && text !== '') {
+    <p [ngStyle]="textStyle" [typeAnimation]="getTypeAnimation('text')" [animationStyle]="getAnimationStyle('text')" >{{ text | translate }}</p>
+}

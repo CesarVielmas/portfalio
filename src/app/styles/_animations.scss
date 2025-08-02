@@ -1,0 +1,117 @@
+@keyframes expand-width-to-full {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes expand-width-to-zero {
+  0% { width: 100%; }
+  100% { width: 0; }
+}
+@keyframes scale-element {
+  0% {opacity:1;transform: scale(1);}
+  100%{opacity: 0.65; transform: scale(var(--scale-cuantity,1.1));}
+}
+@keyframes descale-element {
+  0% {opacity: 0.65;transform: scale(var(--scale-cuantity,1.1));}
+  100% {opacity:1;transform: scale(1);}
+}
+@keyframes scale-element-click {
+  0%{transform: scale(1);}
+  100%{transform: scale(var(--scale-click-percentage,1.1));}
+}
+@keyframes descale-element-click {
+  0%{transform: scale(var(--scale-click-percentage,1.1));}
+  100%{transform: scale(1);}
+}
+@keyframes rotate-element-click {
+  0%{transform:rotate((var(--rotate-click-initial,'0deg')));}
+  100%{transform:rotate((var(--rotate-click-final,'160deg')));}
+}
+@keyframes height-zero-appear {
+    from {height: 0;}
+    to {height: var(--height-zero-appear-height,200px);}
+}
+@keyframes width-zero-appear {
+    from {width:0;}
+    to {width: var(--width-zero-appear-width,200px);}
+}
+@keyframes movement-y-with-opacity-appear {
+  from{
+    opacity: 0;
+    transform: translateY(var(--movement-y-with-opacity-appear-distance,'-10%'));
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes text-change-color {
+  from{
+    color:var(--text-change-color-initial,white);
+  }
+  to{
+    color:var(--text-change-color-final,black);
+  }
+}
+@mixin animate-underline-hover($direction: in) {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: var(--underline-height, 2px);
+    background-color: var(--underline-color, black);
+    bottom: 0;
+    left: 0;
+    transform-origin: center;
+    will-change:width;
+    @if $direction == in {
+      width: 0;
+      animation: expand-width-to-full 
+                var(--underline-duration, 0.3s) 
+                var(--underline-timing, ease-out) 
+                forwards;
+    } @else {
+      width: 100%;
+      animation: expand-width-to-zero 
+                var(--underline-duration, 0.3s) 
+                var(--underline-timing, ease-out) 
+                forwards;
+    }
+  }
+  &:hover::after {
+    animation-play-state: running;
+  }
+}
+@mixin animate-scale-hover($direction:in){
+  will-change: opacity,transform;
+  @if $direction == in{
+    animation: scale-element
+                var(--scale-duration, 0.3s) 
+                var(--scale-timing, ease-out) 
+                forwards;
+  }
+  @else{
+    animation: descale-element 
+                var(--scale-duration, 0.3s) 
+                var(--scale-timing, ease-out) 
+                forwards;
+  }
+}
+
+@mixin animate-scale-click($direction){
+  will-change: transform;
+  @if $direction == in{
+    animation: scale-element-click
+                var(--scale-click-duration, 0.3s) 
+                var(--scale-click-timing, ease-out) 
+                forwards;
+  }
+  @else{
+    animation: descale-element-click 
+                var(--scale-click-duration, 0.3s) 
+                var(--scale-click-timing, ease-out) 
+                forwards;
+  }
+}

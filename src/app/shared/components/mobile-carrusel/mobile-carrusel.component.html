@@ -1,0 +1,28 @@
+@if(contentSignal()){
+    <div [ngStyle]="stylesFatherDiv" class="fatherDiv" #fatherDiv>
+    @for (data of contentSignal(); track data['id'];) {
+        @if(data['functionToDo']){
+        <div [ngStyle]="stylesCard" style="position: relative;left:0%;will-change: left;transition: left 0.2s ease;" [typeAnimation]="'hover-scale'" [animationStyle]="{'scaleDuration':'0.2s','scaleTiming':'ease-in-out','scaleCuantity':'1.02'}" (click)="eventFunctionToDo(data['id'])" #cardElement>
+        
+            @if(('urlImage') in data){
+                <img alt="image_carrusel" class="image-carrusel" [src]="data['urlImage']" style="flex:5;width: 100%;height: 100%;max-width: 100%;max-height: 100%;overflow: hidden;margin-bottom: 2%;" />
+            }
+            @if(('contentText') in data){
+                <p [style.color]="textColor" [style.backgroundColor]="backgroundColorText" style="flex: 1;display: block;width: 100%;height:100%;text-align:center;font-family: 'Poppins';margin:0;font-size: 1vw;letter-spacing: 0.11vw;font-weight:300;padding-top: 2%;">{{ data['contentText'] }}</p>
+            }
+        </div>
+        }
+        @else{
+        <div [ngStyle]="stylesCard" style="position: relative;left:0%;will-change: left;transition: left 0.2s ease;" #cardElement>
+        
+            @if(('urlImage') in data){
+                <img alt="image_carrusel" class="image-carrusel" [src]="data['urlImage']" style="flex:5;width: 100%;height: 100%;max-width: 100%;max-height: 100%;overflow: hidden;margin-bottom: 2%;" />
+            }
+            @if(('contentText') in data){
+                <p [style.color]="textColor" [style.backgroundColor]="backgroundColorText" style="flex: 1;display: block;width: 100%;height:100%;text-align:center;font-family: 'Poppins';margin:0;font-size: 1vw;letter-spacing: 0.11vw;font-weight:300;padding-top: 2%;">{{ data['contentText'] }}</p>
+            }
+        </div>
+        }
+    }
+    </div>
+}

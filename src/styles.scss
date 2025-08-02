@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@app/styles/_animations_classes.scss";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@font-face {
+  font-family: 'Open Sans';
+  src: url('assets/fonts/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('assets/fonts/Open_Sans/static/OpenSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+html, body { height:100%; margin: 0; padding: 0; box-sizing:border-box; width: 100%;}

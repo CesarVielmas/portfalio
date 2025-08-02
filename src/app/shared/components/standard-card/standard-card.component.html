@@ -1,0 +1,11 @@
+@if(cardConfig){
+    @if(stateChildCard()){
+        
+    }
+    @else{
+        <div class="card" [ngStyle]="stylesCard">
+            <ng-content></ng-content>
+        </div>
+    }
+    
+}

@@ -1,0 +1,55 @@
+{
+    "header_home":{
+        "PART_PROYECT_HEADER":"Proyectos",
+        "PART_INFORMATION_HEADER":"Acerca De Mi",
+        "PART_CONTACT_HEADER":"Contacto",
+        "PART_PROCESS_HEADER":"Despliegue",
+        "PART_PROYECT_HEADER_WEB":"WEB",
+        "PART_PROYECT_HEADER_MOBILE":"MOBILE",
+        "PART_PROYECT_HEADER_DESKTOP":"DESKTOP",
+        "PART_PROYECT_HEADER_BACKEND":"BACKEND",
+        "PART_PROYECT_HEADER_OTHERS":"OTROS",
+        "PART_PROYECT_HEADER_LANGUAGE_ES":"ESPAÑOL",
+        "PART_PROYECT_HEADER_LANGUAGE_EN":"INGLES"
+    },
+    "home_apart":{
+        "PART_PRESENTATION_HEADER":"HOLA MUNDO",
+        "PART1_PRESENTATION_HOME":"Hola, Soy Cesar Vielmas",
+        "PART2_PRESENTATION_HOME":"Ingeniero De Software.",
+        "PART_PRESENTATION_CONTENT":"¡Hola! Soy César Vielmas, un Ingeniero de Software con curiosidad insaciable y pasión por crear cosas que funcionan de verdad. Me encanta tomar ideas y transformarlas en aplicaciones de escritorio, móviles o web, siempre cuidando la experiencia de usuario y el rendimiento.En mi día a día exploro nuevas tecnologías, optimizo procesos y construyo pequeñas herramientas que me ahorran tiempo y mejoran mi flujo de trabajo.",
+        "SOME_LANGUAGES_TITTLE":"Lenguajes De Programacion",
+        "some_languages": {
+        "TITTLE_LANGUAGE_C": "Lenguaje C",
+        "CONTENT_LANGUAGE_C": "Utilicé C principalmente para proyectos escolares y aplicaciones sencillas en terminal, sin interfaz gráfica. También me sirvió para aprender los conceptos fundamentales de la programación y facilitar mi transición a otros lenguajes.",
+
+        "TITTLE_LANGUAGE_CPP": "Lenguaje C++",
+        "CONTENT_LANGUAGE_CPP": "Usé C++ tanto en proyectos escolares como en desarrollos más avanzados. Creé interfaces gráficas simples y más adelante construí DLLs, videojuegos con librerías externas y otras aplicaciones complejas.",
+
+        "TITTLE_LANGUAGE_PYTHON": "Lenguaje Python",
+        "CONTENT_LANGUAGE_PYTHON": "He utilizado Python para desarrollar aplicaciones de mediana complejidad, incluyendo videojuegos básicos con librerías, sitios web, APIs web y scripts diversos. Su flexibilidad lo convierte en una herramienta versátil para múltiples áreas de desarrollo.",
+
+        "TITTLE_LANGUAGE_JAVASCRIPT": "Lenguaje JavaScript",
+        "CONTENT_LANGUAGE_JAVASCRIPT": "JavaScript es uno de los lenguajes que domino con mayor profundidad. Lo he utilizado ampliamente en frameworks como React, Angular y Vue.js, así como en proyectos desarrollados con JavaScript puro (vanilla). Ha sido clave en mi experiencia tanto en frontend como en desarrollo full-stack.",
+
+        "TITTLE_LANGUAGE_TYPESCRIPT": "Lenguaje TypeScript",
+        "CONTENT_LANGUAGE_TYPESCRIPT": "He utilizado TypeScript en distintos proyectos con frameworks como React, Angular y Vue.js. Su tipado fuerte y mejor experiencia para el desarrollador lo hacen ideal para construir aplicaciones front-end escalables y mantenibles.",
+
+        "TITTLE_LANGUAGE_CSHARP": "Lenguaje C#",
+        "CONTENT_LANGUAGE_CSHARP": "C# es otro lenguaje en el que tengo un dominio sólido. Lo he utilizado en el desarrollo de backend, aplicaciones de escritorio y proyectos web usando Blazor, lo que demuestra su versatilidad tanto en proyectos empresariales como personales.",
+
+        "TITTLE_LANGUAGE_KOTLIN": "Lenguaje Kotlin",
+        "CONTENT_LANGUAGE_KOTLIN": "Actualmente estoy aprendiendo y utilizando Kotlin en proyectos en curso, principalmente con Gradle y el SDK de Android. Su sintaxis moderna y su interoperabilidad con Java lo convierten en una herramienta prometedora para el desarrollo móvil y backend.",
+
+        "TITTLE_LANGUAGE_R": "Lenguaje R",
+        "CONTENT_LANGUAGE_R": "He usado R en algunos proyectos escolares y tareas básicas de análisis de datos. Sin embargo, suelo preferir Python debido a su ecosistema más amplio de librerías orientadas a la ciencia de datos y aprendizaje automático.",
+
+        "TITTLE_LANGUAGE_SQL": "Lenguaje SQL",
+        "CONTENT_LANGUAGE_SQL": "SQL es mi lenguaje principal para trabajar con bases de datos relacionales. Lo he utilizado en entornos como SQL Server, SQLite y MySQL, lo que me ha permitido realizar modelado de datos, consultas y gestión eficiente de bases de datos.",
+
+        "TITTLE_LANGUAGE_JAVA": "Lenguaje Java",
+        "CONTENT_LANGUAGE_JAVA": "He utilizado Java en algunas aplicaciones de escritorio y tengo la intención de retomarlo para desarrollar soluciones más profesionales y optimizadas. Sus bases sólidas y versatilidad lo hacen ideal para crear aplicaciones escalables y robustas."
+        }
+    },
+    "SOME_TECHNOLOGYS_TITTLE":"Tecnologias y Herramientas",
+    "SOME_TECHNOLOGYS_SUBTITTLE":"Tecnologias y Herramientas Utilizadas Con Frecuencia"
+}

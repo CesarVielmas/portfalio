@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build:ssr": "ng build && ng run portafolio:server", 
-    "serve:ssr": "node dist/portafolio/server/server.mjs" ,
+    "build:ssr": "ng build && ng run portafolio:server",
+    "serve:ssr": "node dist/portafolio/server/server.mjs",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -33,7 +33,9 @@
     "@angular/ssr": "^20.0.5",
     "@ngx-translate/core": "^16.0.4",
     "@ngx-translate/http-loader": "^16.0.1",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "googleapis": "^156.0.0",
     "material-icons": "^1.13.14",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

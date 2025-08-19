@@ -24,6 +24,11 @@
         </deployment-menu-component>
     }
 <router-outlet></router-outlet>
+@if(animationChangePath()){
+  <div class="footer-change-animation" #changePathAnimation>
+    <wave-animation-component [startWave]="footerWaveChangePathInit" [precision]="1" [duration]="99999" [colorWave]="'#083d56'" [finalWave]="footerWaveChangePathInit"></wave-animation-component>
+  </div>
+}
 <footer class="footer-homer">
   @defer(on viewport){
     <wave-animation-component [startWave]="footerWaveInit" [precision]="240" [duration]="25000" [colorWave]="'#083d56'" [finalWave]="footerWaveFinal">

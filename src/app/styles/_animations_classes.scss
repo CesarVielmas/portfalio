@@ -22,7 +22,8 @@
   //appear height
   --global-appear-height-zero-duration:0.5s;
   --global-appear-height-zero-timing:ease-out;
-  --global-appear-height-zero-height:200px;
+  --global-appear-height-zero-height-init:0px;
+  --global-appear-height-zero-height-final:200px;
   //appear width
   --global-appear-width-zero-duration:0.5s;
   --global-appear-width-zero-timing:ease-out;
@@ -90,7 +91,8 @@
 .appear-height-zero-animation{
   --height-zero-appear-duration:var(--global-appear-height-zero-duration);
   --height-zero-appear-timing:var(--global-appear-height-zero-timing);
-  --height-zero-appear-height:var(--global-appear-height-zero-height);
+  --height-zero-appear-height-init:var(--global-appear-height-zero-height-init);
+  --height-zero-appear-height-final:var(--global-appear-height-zero-height-final);
   will-change:height;
   animation: height-zero-appear var(--height-zero-appear-duration, 0.3s) var(--height-zero-appear-timing, ease-out) forwards;
 }

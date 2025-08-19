@@ -1,8 +1,13 @@
 .fatherSvg{
     position: absolute;
-    top: auto;
+    top: 0;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    stroke: none;
+    overflow: hidden;
     z-index: 0;
     display: block;
 }

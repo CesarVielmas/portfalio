@@ -1,0 +1,33 @@
+<label [ngStyle]="labelStyle">{{ label | translate  }}</label>
+<div [ngStyle]="inputStyle">
+    <div class="prefixContainer" [style.width]="widthPrefix()[0]" style="display: flex;position: absolute;top: auto;height: 100%;align-items: center;border-right: 2px solid #083d56;z-index: 2;" #prefixContainer>
+        <span [ngClass]="'flag:'+phonePrefix" style="display: inline;font-size: 1.5vw;margin-left: 6%;"></span>
+        <p [style.color]="inputStyle['color']" [style.fontSize]="inputStyle['font-size']" [style.letterSpacing]="inputStyle['letter-spacing']" style="display: inline;position: relative;font-family: Poppins;font-weight:300;margin-left: 4%;top: auto;">{{phonePrefix}}</p>
+    </div>
+    <input [style.color]="inputStyle['color']" [style.backgroundColor]="inputStyle['background-color']" [style.fontSize]="inputStyle['font-size']" [style.letterSpacing]="inputStyle['letter-spacing']" style="position: relative;z-index: 1;height: 100%;width: 81.5%;border:none;font-family: Poppins;padding-left: 18.5%;font-weight: 300;" [value]="value" (input)="onInput($event,false)" (blur)="onInput($event,true)"  />
+    @if(validatePhoneNumber('length')){
+        <div [style.borderRadius]="inputStyle['border-radius']" style="position: absolute;width: 100%;background-color: rgb(139, 20, 20);height: 80%;top: 80%;z-index: 0;" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+            <div style="height: auto; width: 100%;text-align: center;position: relative;top:25%;">
+                <span style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">
+                    {{"validation_forms.PHONE_LENGTH_ERROR_PART1" | translate}}
+                </span>
+                <span style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">
+                    {{obtainRangesText()}}
+                </span>
+                <span style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">
+                    {{"validation_forms.PHONE_LENGTH_ERROR_PART2" | translate}}
+                </span>
+            </div>
+
+        </div>
+    }
+    @if(validatePhoneNumber('number') && !validatePhoneNumber('length')){
+        <div [style.borderRadius]="inputStyle['border-radius']" style="position: absolute;width: 100%;background-color: rgb(139, 20, 20);height: 80%;top: 80%;z-index: 0;" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+            <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">
+                    {{"validation_forms.PHONE_NUMBER_ERROR" | translate}}
+                </p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,148 @@
+.contact-card{
+    height: 86vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0E6A95;
+}
+.contact-card .card-signature{
+    position: relative;
+    height: 85%;
+    margin-top: 3%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-card .card-signature .part-information{
+    flex: 2;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #083d56;
+}
+.contact-card .card-signature .part-information .content{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    background-color: #083d56;
+    z-index: 1;
+}
+.contact-card .card-signature .part-information .content .contact-image{
+    height: 88%;
+    width: 85%;
+    object-fit: cover;
+    margin-left: 13%;
+    margin-right: auto;
+}
+.contact-card .card-signature .part-information .wave{
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: top right;
+    top: 0;
+    right: -0.2%;
+    background-color: #083d56;
+    z-index: 0;
+    overflow: hidden;
+}
+.contact-card .card-signature .part-form{
+    flex: 1.2;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #0E6A95;
+}
+.contact-card .card-signature .part-form .tittle-form{
+    font-family:'Poppins';
+    font-weight: 500;
+    color: #083d56;
+    text-align: start;
+    margin-left: 15%;
+    font-size: 2.5vw;
+    margin-bottom: 0;
+    letter-spacing:'0.08vw'
+}
+.contact-card .card-signature .part-form .form-group{
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.5%;
+}
+.contact-card .card-signature .part-form .form-actions{
+ height: 6vh;
+ width: 60%;
+ margin-left: 15%;
+ margin-right: auto;
+}
+.contact-card .card-signature .part-form .form-actions .button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 0.3vw;
+    background-color: #083d56;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins';
+    letter-spacing: 0.15vw;
+    font-weight: 300;
+    font-size: 1vw;
+}
+.contact-card .card-signature .part-form .form-group .label{
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: #083d56;
+    font-family:'Poppins';
+    text-align:center;
+    margin-left:3%;
+}
+.contact-card .card-signature .part-form .form-group .errorMessage{
+    position: absolute;
+    width: 100%;
+    background-color: rgb(139, 20, 20);
+    height: 80%;
+    top: 80%;
+    border-radius: 0.2vw;
+    z-index: 0;
+}
+.contact-card .card-signature .part-form .form-group .div-input{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 5vh;
+    width: 90%;
+    border-radius: 0.2vw;
+    margin-top: 0;
+    box-shadow: 0px 0px 10px -2px #165678;
+    color: #083d56;
+    font-size: 1.1vw;
+    letter-spacing: 0.1vw;
+    background-color: #0E6A95;
+}
+.contact-card .card-signature .part-form .form-group .div-input .input{
+    width: 95%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.1vw;
+    letter-spacing: 0.1vw;
+    background-color: #0E6A95;
+    color: #083d56;
+    z-index: 1;
+    padding-left: 5%;
+}
+.form-message{
+    height: 2vh;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: #083d56;
+    font-size: 1.2vw;
+    letter-spacing: 0.2vw;
+    margin-top: 1%;
+}
+.form-message .error{
+    color: rgb(109, 15, 15);
+}

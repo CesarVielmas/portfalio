@@ -27,8 +27,8 @@
   100%{transform:rotate((var(--rotate-click-final,'160deg')));}
 }
 @keyframes height-zero-appear {
-    from {height: 0;}
-    to {height: var(--height-zero-appear-height,200px);}
+    from {height:var(--height-zero-appear-height-init,0px);}
+    to {height: var(--height-zero-appear-height-final,200px);}
 }
 @keyframes width-zero-appear {
     from {width:0;}

@@ -1,4 +1,5 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
+import { Component, ElementRef, Inject, Input, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from "@angular/core";
 
 @Component({
     selector:'wave-animation-component',
@@ -19,12 +20,14 @@ export class WaveAnimationComponent implements OnInit,OnDestroy{
     private frame:number = 0;
     private forward:boolean = true;
     private animationId:number | null = null;
+    
+    constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
     ngOnInit(): void {
-        if (this.startWave != null && this.finalWave != null && this.precision != null && this.duration != null)
+        if (this.startWave != null && this.finalWave != null && this.precision != null && this.duration != null && isPlatformBrowser(this.platformId))
             this.animate();    
     }
     ngOnDestroy(): void {
-        if (this.animationId !== null) {
+        if (this.animationId !== null && isPlatformBrowser(this.platformId)) {
             cancelAnimationFrame(this.animationId);
         }
     }
@@ -48,6 +51,6 @@ export class WaveAnimationComponent implements OnInit,OnDestroy{
             this.forward = !this.forward;
         }
         const delay = this.duration / (2 * totalFrames);
-        this.animationId = window.setTimeout(() => this.animate(), delay);
+        this.animationId = Number(globalThis.setTimeout(() => this.animate(), delay));
     }
 }

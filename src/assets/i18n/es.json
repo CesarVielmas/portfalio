@@ -51,5 +51,28 @@
         }
     },
     "SOME_TECHNOLOGYS_TITTLE":"Tecnologias y Herramientas",
-    "SOME_TECHNOLOGYS_SUBTITTLE":"Tecnologias y Herramientas Utilizadas Con Frecuencia"
+    "SOME_TECHNOLOGYS_SUBTITTLE":"Tecnologias y Herramientas Utilizadas Con Frecuencia",
+    "contact_apart": {
+        "PART_CONTACT_HEADER": "Contáctame",
+        "FORM_LABEL_NAME": "Nombre",
+        "FORM_LABEL_EMAIL": "Correo electrónico",
+        "FORM_LABEL_PHONE": "Teléfono",
+        "FORM_LABEL_INFORMATION": "Información",
+        "FORM_PLACEHOLDER_NAME": "Ingresa tu nombre completo",
+        "FORM_PLACEHOLDER_EMAIL": "Ingresa tu dirección de correo",
+        "FORM_PLACEHOLDER_PHONE": "Ingresa tu número de teléfono",
+        "FORM_PLACEHOLDER_INFORMATION": "Escribe tu mensaje o consulta aquí",
+        "FORM_BUTTON_SEND": "Enviar mensaje",
+        "FORM_SUCCESS_MESSAGE": "Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo lo antes posible.",
+        "FORM_ERROR_MESSAGE": "Ocurrió un error al enviar tu mensaje. Por favor, intenta nuevamente más tarde."
+    },
+    "validation_forms": {
+        "REQUIRED_FIELD": "Este campo es obligatorio.",
+        "EMAIL_ERROR": "El correo electrónico no es válido.",
+        "NAME_ERROR": "El nombre solo puede contener letras y espacios.",
+        "MAX_LENGTH_ERROR": "El texto excede la longitud máxima permitida.",
+        "PHONE_LENGTH_ERROR_PART1": "El número de teléfono debe tener al menos",
+        "PHONE_LENGTH_ERROR_PART2": "dígitos.",
+        "PHONE_NUMBER_ERROR": "El número de teléfono debe ser válido."
+    }
 }

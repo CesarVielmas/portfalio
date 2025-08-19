@@ -43,6 +43,7 @@ export class AnimationPushService {
         const timer:string = styles['heightZeroAppearDuration'];
         setTimeout(() => {
             el.classList.remove("appear-height-zero-animation");
+            el.style.height = styles['heightZeroAppearHeightFinal'];
         }, Number(parseFloat(timer) * (timer.includes("s") ? 1000 : 60000)));
         this._applyAnimationStyle(styles,el);
     }

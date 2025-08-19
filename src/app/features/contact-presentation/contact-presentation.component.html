@@ -1,0 +1,94 @@
+<div class="contact-card">
+    <div class="card-signature" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1.5s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-15%'}">
+        <standard-card-component [cardConfig]="cardConfigPresentation">
+            <div class="part-information">
+                <div class="content">
+                    <img class="contact-image" src="assets/svg/code_learn_people.svg" />
+                </div>
+                <div class="wave">
+                    <div style="height: 98%; width: 100%; position: relative; background-color: #0E6A95;overflow: hidden;">
+                        <wave-animation-component [startWave]="footerWaveInit" [precision]="240" [duration]="25000" [colorWave]="'#083d56'" [finalWave]="footerWaveFinal"></wave-animation-component>
+                    </div>
+                </div>
+            </div>
+            <div class="part-form">
+            <h1 class="tittle-form">{{ 'contact_apart.PART_CONTACT_HEADER' | translate }}</h1>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-group">
+                        <label class="label">{{ 'contact_apart.FORM_LABEL_NAME'  | translate}}</label>
+                        <div class="div-input">
+                            <input class="input" formControlName="name" />
+                            @if(contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched){
+                                <div class="errorMessage" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+                                    <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                                        <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">{{ 'validation_forms.REQUIRED_FIELD' | translate}}</p>
+                                    </div>
+                                </div>
+                            }
+                            @if(contactForm.get('name')?.hasError('pattern')){
+                                <div class="errorMessage" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+                                    <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                                        <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">{{ 'validation_forms.NAME_ERROR' | translate}}</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <phone-input formControlName="phone" [label]="'contact_apart.FORM_LABEL_PHONE'" [labelStyle]="styleLabelPhone" [inputStyle]="styleInputPhone"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="label">{{ 'contact_apart.FORM_LABEL_EMAIL'  | translate}}</label>
+                        <div class="div-input">
+                            <input class="input" formControlName="email" />
+                            @if(contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched){
+                                <div class="errorMessage" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+                                    <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                                        <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">{{ 'validation_forms.REQUIRED_FIELD' | translate}}</p>
+                                    </div>
+                                </div>
+                            }
+                            @if(contactForm.get('email')?.hasError('email')){
+                                <div class="errorMessage" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-120%'}">
+                                    <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                                        <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">{{ 'validation_forms.EMAIL_ERROR' | translate}}</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="label">{{ 'contact_apart.FORM_LABEL_INFORMATION'  | translate}}</label>
+                        <div class="div-input" style="height: 12vh;">
+                            <textarea class="input" style="resize: none;overflow: hidden;" formControlName="information"></textarea>
+                            @if(contactForm.get('information')?.hasError('maxLength')){
+                                <div class="errorMessage" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-40%'}">
+                                    <div style="height: auto; width: 100%;text-align: center;position: relative;top:10%;">
+                                        <p style="color: #fff; font-family: Poppins; font-weight: 300; font-size: 0.64vw; letter-spacing: 0.5px;">{{ 'validation_forms.MAX_LENGTH_ERROR' | translate}}</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                    <div class="form-actions">
+                        <button [style.backgroundColor]="contactForm.invalid?'#3C5D72':'#083D56'" [style.color]="contactForm.invalid?'#9E9E9E':'white'" class="button" type="submit" [disabled]="contactForm.invalid">
+                            {{ 'contact_apart.FORM_BUTTON_SEND' | translate }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </standard-card-component>
+    </div>
+     @if(successMessage()){
+        <div class="form-message success" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-20%'}">
+        {{ 'contact_apart.FORM_SUCCESS_MESSAGE' | translate }}
+        </div>
+    }
+    @if(errorMessage()){
+        <div class="form-message error" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-20%'}">
+        {{ 'contact_apart.FORM_ERROR_MESSAGE' | translate }}
+        </div>
+    }
+</div>

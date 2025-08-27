@@ -13,5 +13,13 @@ export const serverRoutes: ServerRoute[] = [
   {
     path:'login',
     renderMode:RenderMode.Client
+  },
+  {
+    path: 'time-line',
+    renderMode: RenderMode.Prerender
+  },
+  {
+    path: 'proyects',
+    renderMode:RenderMode.Prerender
   }
 ];

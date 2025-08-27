@@ -1,12 +1,11 @@
 import { Component, effect, inject, signal} from "@angular/core";
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { GlobalStatesService } from "@app/core/services/global-states.service";
 import { standardCardParameters } from "@app/core/services/interfaces/standardCardParameters.config";
 import { StandardCardComponent } from "@app/shared/components/standard-card/standard-card.component";
 import { WaveAnimationComponent } from "@app/shared/components/wave-animation/wave-animation.component";
 import { AnimationDirective } from "@app/shared/directives/animation.directive";
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
-import phonePrefix from "@app/../assets/i18n/phone_prefix.json";
 import { PhoneInputComponent } from "@app/shared/components/phone-input/phone-input.component";
 import { GmailApiService } from "@app/core/services/gmail-api.service";
 

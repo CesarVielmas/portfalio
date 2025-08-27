@@ -39,12 +39,6 @@ export class HomeLayout {
       path:"/proyects"
     },
     {
-      id:"header_1",
-      text:"header_home.PART_INFORMATION_HEADER",
-      icon:"person",
-      path:"/about-me"
-    },
-    {
       id:"header_2",
       text:"header_home.PART_CONTACT_HEADER",
       icon:"perm_contact_calendar",

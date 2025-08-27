@@ -52,6 +52,14 @@
     color:var(--text-change-color-final,black);
   }
 }
+@keyframes background-change-color {
+  from{
+    background-color:var(--background-change-color-initial,white);
+  }
+  to{
+    background-color:var(--background-change-color-final,black);
+  }
+}
 @mixin animate-underline-hover($direction: in) {
   position: relative;
   text-decoration: none;

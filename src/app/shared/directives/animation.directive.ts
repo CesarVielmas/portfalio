@@ -80,6 +80,28 @@ export class AnimationDirective implements OnInit {
     appear_movement_y_with_opacity(){
         this.animationPushService.movementYWithOpacityAppear(this.element.nativeElement as HTMLElement,this.animationStyle);
     }
+    appear_width_zero(){
+        this.animationPushService.widthZeroAnimationAppear(this.element.nativeElement as HTMLElement, this.animationStyle);
+    }
+    appear_button_scale_and_change_color(){
+        this.element.nativeElement.classList.remove('background-change-color')
+        this.element.nativeElement.classList.add('background-change-color')
+        const animationScale = {
+            scaleClickDuration: this.animationStyle['scaleClickDuration'],
+            scaleClickPercentage: Number.parseFloat(this.animationStyle['scaleClickPercentage']),
+            scaleClickTiming: this.animationStyle['scaleClickTiming']
+        }
+        this.animationStyle = {
+            backgroundChangeColorDuration: this.animationStyle['backgroundChangeColorDuration'],
+            backgroundChangeColorTiming: this.animationStyle['backgroundChangeColorTiming'],
+            backgroundChangeColorInitial: this.animationStyle['backgroundChangeColorInitial'],
+            backgroundChangeColorFinal: this.animationStyle['backgroundChangeColorFinal']
+        };
+        this.applyAnimationStyle();
+        setTimeout(()=>{
+            this.animationPushService.scaleAnimationClick(this.element.nativeElement as HTMLElement,animationScale);
+        },Number(parseFloat(this.animationStyle['backgroundChangeColorDuration']) * (this.animationStyle['backgroundChangeColorDuration'].includes("s") ? 1000 : 60000)));
+    }
     private clean_element_events(){
         this.element.nativeElement.removeEventListener(this.typeEventElement, this.methodEventPass as MetodoConArgs);
         this.element.nativeElement.removeEventListener(this.typeEventOptional, this.methodOptionalEvent as MetodoConArgs);

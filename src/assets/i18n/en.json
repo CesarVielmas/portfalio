@@ -1,7 +1,6 @@
 {
     "header_home":{
         "PART_PROYECT_HEADER":"Projects",
-        "PART_INFORMATION_HEADER":"About Me",
         "PART_CONTACT_HEADER":"Contact",
         "PART_PROCESS_HEADER":"Deployment",
         "PART_PROYECT_HEADER_WEB":"WEB",
@@ -51,29 +50,30 @@
         },
         "SOME_TECHNOLOGYS_TITTLE":"Technologies and Tools",
         "SOME_TECHNOLOGYS_SUBTITTLE_ONE":"Frequently Technologies",
-        "SOME_TECHNOLOGYS_SUBTITTLE_TWO":"Frequently Tools",
-        "contact_apart": {
-            "PART_CONTACT_HEADER": "Contact Me",
-            "FORM_LABEL_NAME": "Name",
-            "FORM_LABEL_EMAIL": "Email",
-            "FORM_LABEL_PHONE": "Phone",
-            "FORM_LABEL_INFORMATION": "Information",
-            "FORM_PLACEHOLDER_NAME": "Enter your full name",
-            "FORM_PLACEHOLDER_EMAIL": "Enter your email address",
-            "FORM_PLACEHOLDER_PHONE": "Enter your phone number",
-            "FORM_PLACEHOLDER_INFORMATION": "Write your message or inquiry here",
-            "FORM_BUTTON_SEND": "Send Message",
-            "FORM_SUCCESS_MESSAGE": "Your message has been sent successfully. I will get back to you as soon as possible.",
-            "FORM_ERROR_MESSAGE": "An error occurred while sending your message. Please try again later."
-        },
-        "validation_forms":{
-            "REQUIRED_FIELD": "This field is required.",
-            "EMAIL_ERROR": "Please enter a valid email address.",
-            "NAME_ERROR": "Only letters and spaces are allowed.",
-            "MAX_LENGTH_ERROR": "The maximum length has been exceeded.",
-            "PHONE_LENGTH_ERROR_PART1": "The phone number must fall within the range of",
-            "PHONE_LENGTH_ERROR_PART2": "digits long.",
-            "PHONE_NUMBER_ERROR": "The phone number must be a valid number."
-        }
-    }
+        "SOME_TECHNOLOGYS_SUBTITTLE_TWO":"Frequently Tools"
+    },
+    "contact_apart": {
+        "PART_CONTACT_HEADER": "Contact Me",
+        "FORM_LABEL_NAME": "Name",
+        "FORM_LABEL_EMAIL": "Email",
+        "FORM_LABEL_PHONE": "Phone",
+        "FORM_LABEL_INFORMATION": "Information",
+        "FORM_PLACEHOLDER_NAME": "Enter your full name",
+        "FORM_PLACEHOLDER_EMAIL": "Enter your email address",
+        "FORM_PLACEHOLDER_PHONE": "Enter your phone number",
+        "FORM_PLACEHOLDER_INFORMATION": "Write your message or inquiry here",
+        "FORM_BUTTON_SEND": "Send Message",
+        "FORM_SUCCESS_MESSAGE": "Your message has been sent successfully. I will get back to you as soon as possible.",
+        "FORM_ERROR_MESSAGE": "An error occurred while sending your message. Please try again later."
+    },
+    "validation_forms":{
+        "REQUIRED_FIELD": "This field is required.",
+        "EMAIL_ERROR": "Please enter a valid email address.",
+        "NAME_ERROR": "Only letters and spaces are allowed.",
+        "MAX_LENGTH_ERROR": "The maximum length has been exceeded.",
+        "PHONE_LENGTH_ERROR_PART1": "The phone number must fall within the range of",
+        "PHONE_LENGTH_ERROR_PART2": "digits long.",
+        "PHONE_NUMBER_ERROR": "The phone number must be a valid number."
+    },
+    "TITTLE_TIME_LINE": "My Deployment History"
 }

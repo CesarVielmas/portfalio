@@ -37,6 +37,11 @@
   --global-text-change-color-timing:ease-out;
   --global-text-change-color-initial:white;
   --global-text-change-color-final:black;
+  //background change color
+  --global-background-change-color-duration:1s;
+  --global-background-change-color-timing:ease-out;
+  --global-background-change-color-initial:white;
+  --global-background-change-color-final:black;
 }
 
 .hover-underline-animation {
@@ -117,4 +122,12 @@
   --text-change-color-final:var(--global-text-change-color-final);
   will-change: color;
   animation: text-change-color var(--text-change-color-duration,0.5s) var(--text-change-color-timing,ease-out) forwards;
+}
+.background-change-color{
+  --background-change-color-duration:var(--global-background-change-color-duration);
+  --background-change-color-timing:var(--global-background-change-color-timing);
+  --background-change-color-initial:var(--global-background-change-color-initial);
+  --background-change-color-final:var(--global-background-change-color-final);
+  will-change: background-color;
+  animation: background-change-color var(--background-change-color-duration,0.5s) var(--background-change-color-timing,ease-out) forwards;
 }

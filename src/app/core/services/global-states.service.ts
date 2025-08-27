@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class GlobalStatesService {
   private _acceptedAnimationsHover: string[] = ['hover-underline', 'hover-scale','hover-move-y','hover-move-x'];
-  private _acceptAnimationsAppear: string[] = ['appear-height-zero','appear-movement-y-with-opacity','appear-text-writing']
+  private _acceptAnimationsAppear: string[] = ['appear-height-zero','appear-width-zero','appear-movement-y-with-opacity','appear-text-writing','appear-button-scale-and-change-color']
   private _acceptedFormatsImages: string[] = ['.avif', '.bmp', '.gif', '.ico', '.jpeg', '.jpg', '.png', '.svg', '.tiff', '.webp'];
   private _acceptedLanguages : string[] = ['en','es'];
   private _language = signal<string>('en');

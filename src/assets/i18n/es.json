@@ -1,7 +1,6 @@
 {
     "header_home":{
         "PART_PROYECT_HEADER":"Proyectos",
-        "PART_INFORMATION_HEADER":"Acerca De Mi",
         "PART_CONTACT_HEADER":"Contacto",
         "PART_PROCESS_HEADER":"Despliegue",
         "PART_PROYECT_HEADER_WEB":"WEB",
@@ -48,10 +47,11 @@
 
         "TITTLE_LANGUAGE_JAVA": "Lenguaje Java",
         "CONTENT_LANGUAGE_JAVA": "He utilizado Java en algunas aplicaciones de escritorio y tengo la intención de retomarlo para desarrollar soluciones más profesionales y optimizadas. Sus bases sólidas y versatilidad lo hacen ideal para crear aplicaciones escalables y robustas."
-        }
+        },
+        "SOME_TECHNOLOGYS_TITTLE":"Tecnologias y Herramientas",
+        "SOME_TECHNOLOGYS_SUBTITTLE_ONE":"Tecnologias Frecuentes",
+        "SOME_TECHNOLOGYS_SUBTITTLE_TWO":"Herramientas Frecuentes"
     },
-    "SOME_TECHNOLOGYS_TITTLE":"Tecnologias y Herramientas",
-    "SOME_TECHNOLOGYS_SUBTITTLE":"Tecnologias y Herramientas Utilizadas Con Frecuencia",
     "contact_apart": {
         "PART_CONTACT_HEADER": "Contáctame",
         "FORM_LABEL_NAME": "Nombre",
@@ -74,5 +74,6 @@
         "PHONE_LENGTH_ERROR_PART1": "El número de teléfono debe tener al menos",
         "PHONE_LENGTH_ERROR_PART2": "dígitos.",
         "PHONE_NUMBER_ERROR": "El número de teléfono debe ser válido."
-    }
+    },
+    "TITTLE_TIME_LINE": "Mi Historial De Versiones"
 }

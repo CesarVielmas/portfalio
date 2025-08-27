@@ -47,6 +47,20 @@ export class AnimationPushService {
         }, Number(parseFloat(timer) * (timer.includes("s") ? 1000 : 60000)));
         this._applyAnimationStyle(styles,el);
     }
+    widthZeroAnimationAppear(el:HTMLElement,styles:Record<string,any> = {}){
+        el.classList.remove("appear-width-zero-animation");
+        if(!styles)
+            return;
+        if(!('widthZeroAppearDuration' in styles))
+            return;
+        el.classList.add("appear-width-zero-animation");
+        const timer:string = styles['widthZeroAppearDuration'];
+        setTimeout(() => {
+            el.classList.remove("appear-width-zero-animation");
+            el.style.width = styles['widthZeroAppearWidth'];
+        }, Number(parseFloat(timer) * (timer.includes("s") ? 1000 : 60000)));
+        this._applyAnimationStyle(styles,el);
+    }
     movementYWithOpacityAppear(el:HTMLElement,styles:Record<string,any> = {}){
         el.classList.remove("appear-movement-y-with-opacity-animation");
         if(!styles)

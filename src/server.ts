@@ -8,6 +8,7 @@ import { gmailRoutes } from '@app/server/server.routes.gmail';
 import express from 'express';
 import 'dotenv/config';
 import { join } from 'node:path';
+import { githubRoutes } from '@app/server/server.routes.github';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -24,9 +25,9 @@ app.use(
 gmailRoutes.forEach(route=>{
   (app as any)[route.method](route.path, route.handler);
 }); 
-/**
- * Handle all other requests by rendering the Angular application.
- */
+githubRoutes.forEach(route=>{
+  (app as any)[route.method](route.path,route.handler);
+});
 app.use((req, res, next) => {
   angularApp
     .handle(req)

@@ -42,6 +42,11 @@
   --global-background-change-color-timing:ease-out;
   --global-background-change-color-initial:white;
   --global-background-change-color-final:black;
+  //loop loading
+  --global-loop-background-color:wheat;
+  --global-loop-width:2%;
+  --global-loop-duration:1s;
+  --global-loop-timing:ease-out;
 }
 
 .hover-underline-animation {
@@ -130,4 +135,12 @@
   --background-change-color-final:var(--global-background-change-color-final);
   will-change: background-color;
   animation: background-change-color var(--background-change-color-duration,0.5s) var(--background-change-color-timing,ease-out) forwards;
+}
+.loading-card-loop{
+  --loading-card-loop-background-color:var(--global-loop-background-color);
+  --loading-card-loop-width:var(--global-loop-width);
+  --loading-card-loop-duration:var(--global-loop-duration);
+  --loading-card-loop-timing:var(--global-loop-timing);
+  will-change: transform;
+  @include anim.animate-loading-loop(in);
 }

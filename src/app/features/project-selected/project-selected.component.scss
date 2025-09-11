@@ -1,0 +1,267 @@
+.project-principal{
+    height: auto;
+    width: 100%;
+    background-color: #0E6A95;
+    overflow: hidden;
+}
+
+.divide-principal{
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    border-width: 0.55vh;
+    border-style:solid;
+    border-radius: 0.2vw;
+    border-color: #083d56;
+}
+.divide-subtittles{
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    border-width: 0.55vh;
+    border-style:solid;
+    border-radius: 0.2vw;
+    border-color: transparent;
+    box-shadow: 0px 0px 12px 0px #165678;
+}
+.proyect-container{
+    height: auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.proyect-container .tittle-proyect{
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.1vw;
+    font-size: 1.8vw;
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+    text-transform: uppercase;
+}
+.proyect-container .subtittle-proyect{
+    text-align: start;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: #083d56;
+    letter-spacing: 0.1vw;
+    font-size: 1.65vw;
+    margin-top: 1%;
+    margin-left: 3%;
+    margin-bottom: 1%;
+}
+.proyect-container .image-proyect{
+    height: 70vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5vw;
+    margin-bottom: 1.5%;
+}
+.proyect-container .list-content{
+    list-style-type:decimal;
+    color: white;
+}
+.proyect-container .list-content-second{
+    list-style-type:disc;
+    color: white;
+}
+.proyect-container .list-content .content,
+.proyect-container .list-content-second .content{
+    text-align: start;
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.1vw;
+    font-size: 0.9vw;
+    margin-top: 1.5%;
+    width: 93%;
+    margin-left: 4%;
+    margin-bottom: 1%;
+}
+.proyect-container .content-default{
+    text-align: start;
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.1vw;
+    font-size: 0.9vw;
+    margin-top: 1.5%;
+    width: 93%;
+    margin-left: 4%;
+    margin-bottom: 1%;
+}
+.proyect-container .top-technologys {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 1.5vw;
+    width: 100%;
+    margin: 1% 0;
+}
+.proyect-container .top-technologys .technology {
+    flex: 1 1 calc(20% - 1.5vw); 
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 1vw;
+    box-shadow: 0px 0px 12px 0px #165678;
+    border-radius: 0.5vw;
+}
+.proyect-container .top-technologys .technology div {
+    flex-shrink: 0;
+    border-radius: 50%;
+    height: 3vh;
+    width: 1.5vw;
+}
+.proyect-container .top-technologys .technology p {
+    margin: 0;
+    text-transform:capitalize;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.3vw;
+    color: #083d56;
+    text-align: left;
+    margin-left: 8%;
+}
+.proyect-container .top-languages {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 2vw;
+    width: 100%;
+    margin: 2.5% 0;
+}
+.proyect-container .top-languages .language {
+    flex: 1 1 calc(31% - 1.5vw); 
+    height: 6.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 1vw;
+    border-radius: 0.5vw;
+}
+.proyect-container .top-languages .language .barProgress {
+    position: relative;
+    flex-shrink: 0;
+    flex: 1;
+    border-radius: 3vw;
+    height: 35%;
+    width: 100%;
+    background-color: #136086;
+    margin-left: 7%;
+}
+.proyect-container .top-languages .language p {
+    margin: 0;
+    text-transform:capitalize;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3vw;
+    color: #083d56;
+    text-align: left;
+    margin-left: 3%;
+}
+.proyect-container .bottom-dates {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 90%;
+    margin: 8% 0% 2% 10%;
+    gap: 7%;
+}
+.proyect-container .bottom-dates .date-init,
+.proyect-container .bottom-dates .date-final {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+    color: white;
+}
+.proyect-container .bottom-dates .date-init div,
+.proyect-container .bottom-dates .date-final div {
+    flex-shrink: 0;
+    border-radius: 50%;
+    height: 3vh;
+    width: 1.45vw;
+    margin-right: 0.6em; 
+}
+.proyect-container .bottom-dates .date-init div {
+    background-color: rgb(2, 127, 2); 
+    color: rgb(2, 127, 2);
+}
+
+.proyect-container .bottom-dates .date-final div {
+    background-color: rgb(88, 14, 7); 
+    color: rgb(88, 14, 7);
+}
+.proyect-container .bottom-dates .date-init p,
+.proyect-container .bottom-dates .date-final p {
+    margin: 0;
+    flex: 1;
+}
+.proyect-container .bottom-dates .date-init {
+    justify-content: center;
+    text-align: left;
+}
+
+.proyect-container .bottom-dates .date-final {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: left;  
+    margin-left: 7%;
+}
+
+.proyect-container .bottom-dates .date-final div {
+    margin-right: 0.6em; 
+}
+
+.proyect-container .bottom-dates .date-final p {
+    margin: 0; 
+}
+//loading
+
+.tittle-loading{
+    height: 10vh;
+    width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 0.5vw;
+    background-color: #136086;
+}
+.principal-image-loading{
+    height: 60vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 0.5vw;
+    background-color: #136086;
+}
+.subtittle-loading{
+    height: 9vh;
+    width: 35vw;
+    margin-left: 4.5%;
+    margin-top: 2%;
+    border-radius: 0.5vw;
+    background-color: #136086;
+}
+.content-loading{
+    height: 20vh;
+    width: 89vw;
+    margin-left: 4.5%;
+    margin-top: 2%;
+    border-radius: 0.5vw;
+    background-color: #136086;
+}

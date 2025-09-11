@@ -43,6 +43,16 @@ export class AnimationDirective implements OnInit {
                 return;
             }
        }
+        if(this.typeAnimation.includes("loop")){
+            const acceptedAnimationsLoop:string[] = this.globalStates.acceptedAnimationsLoop;
+            if(acceptedAnimationsLoop.includes(this.typeAnimation)){
+                this.methodEventPass = (this[this.typeAnimation.replaceAll('-', '_')] as Function).bind(this);
+                this.appRef.isStable.pipe(first(stable => stable)).subscribe(()=>{
+                    this.methodEventPass();
+                });
+                return;
+            }
+       }
        this.element.nativeElement.addEventListener(this.typeEventElement, (e) => this.methodEventPass(e));
     }
     hover_underline(e:MouseEvent){
@@ -101,6 +111,11 @@ export class AnimationDirective implements OnInit {
         setTimeout(()=>{
             this.animationPushService.scaleAnimationClick(this.element.nativeElement as HTMLElement,animationScale);
         },Number(parseFloat(this.animationStyle['backgroundChangeColorDuration']) * (this.animationStyle['backgroundChangeColorDuration'].includes("s") ? 1000 : 60000)));
+    }
+    loop_loading_card(){
+        this.element.nativeElement.classList.remove('loading-card-loop');
+        this.element.nativeElement.classList.add('loading-card-loop');
+        this.applyAnimationStyle();
     }
     private clean_element_events(){
         this.element.nativeElement.removeEventListener(this.typeEventElement, this.methodEventPass as MetodoConArgs);

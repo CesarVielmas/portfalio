@@ -1,4 +1,4 @@
-import { Component, computed, ElementRef, inject, Signal, signal, ViewChild} from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, Signal, signal, ViewChild} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnimationPushService } from '@app/core/services/animations-push.service';
 import { GlobalStatesService } from '@app/core/services/global-states.service';
@@ -77,6 +77,14 @@ export class HomeLayout {
     underlineDuration:'0.5s',
     underlineTiming:'ease-out'
   }
+  constructor() {
+    effect(() => {
+      const nav = this.globalStates.animatedNavigation();
+      if (nav) {
+        this._animationChangePathFunction(nav.path,"",nav.state);
+      }
+    });
+  }
   OpenChangeLanguage = () => this._openChangeLanguage();
   ChangeToSpanish = () => this._changeLanguage("es");
   ChangeToEnglish = () => this._changeLanguage("en");
@@ -97,7 +105,7 @@ export class HomeLayout {
   private _changeLanguage(language:string):void{
       this.globalStates.setLanguage(language);
   }
-  private _animationChangePathFunction(navigate:string,state:string):void{
+  private _animationChangePathFunction(navigate:string,state:string,objectPass:any = {}):void{
     if(state != "")
       this._actualState.set(state);
     else
@@ -107,7 +115,7 @@ export class HomeLayout {
       this._animationPushService.heightZeroAnimationAppear(this._divPathChange.nativeElement as HTMLElement,{'heightZeroAppearDuration':'1s','heightZeroAppearTiming':'ease-out','heightZeroAppearHeightInit':'0%','heightZeroAppearHeightFinal':'520vh'});
       setTimeout(()=>{
         this._divPathChange.nativeElement.style.backgroundColor = "#083d56";
-        this.globalStates.navigateTo(navigate);
+        this.globalStates.navigateTo(navigate,objectPass);
         setTimeout(()=>{
           this._divPathChange.nativeElement.style.backgroundColor = 'transparent';
           this._animationPushService.heightZeroAnimationAppear(this._divPathChange.nativeElement as HTMLElement,{'heightZeroAppearDuration':'0.5s','heightZeroAppearTiming':'ease-out','heightZeroAppearHeightInit':'520vh','heightZeroAppearHeightFinal':'0'});

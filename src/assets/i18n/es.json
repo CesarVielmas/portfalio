@@ -75,5 +75,27 @@
         "PHONE_LENGTH_ERROR_PART2": "dígitos.",
         "PHONE_NUMBER_ERROR": "El número de teléfono debe ser válido."
     },
-    "TITTLE_TIME_LINE": "Mi Historial De Versiones"
+    "TITTLE_TIME_LINE": "Mi Historial De Versiones",
+    "TITTLE_PROJECTS":"Proyectos Destacados",
+    "TOPIC_OTHERS":"Otros Proyectos",
+    "PROJECT_STATE_0": "Proyecto no iniciado.",
+    "PROJECT_STATE_1": "Proyecto apenas iniciado, requiere un desarrollo significativo.",
+    "PROJECT_STATE_2": "Proyecto en etapas muy tempranas, con estructura básica.",
+    "PROJECT_STATE_3": "Proyecto parcialmente desarrollado, con muchas funcionalidades clave ausentes.",
+    "PROJECT_STATE_4": "Proyecto en desarrollo, con las primeras características implementadas.",
+    "PROJECT_STATE_5": "Proyecto a medio camino, con los componentes principales funcionando.",
+    "PROJECT_STATE_6": "Proyecto mayormente funcional, aunque requiere refinamientos.",
+    "PROJECT_STATE_7": "Proyecto parcialmente terminado con margen para mejoras.",
+    "PROJECT_STATE_8": "Proyecto casi completo, faltan pequeños ajustes.",
+    "PROJECT_STATE_9": "Proyecto terminado y estable, pendiente de optimizaciones.",
+    "PROJECT_STATE_10": "Proyecto completamente finalizado, pulido y listo para producción.",
+    "PROJECT_TECH_USED": "Este proyecto utilizó: {{techs}}",
+    "PROJECT_WITHOUT_TITTLE":"Proyecto Desconocido",
+    "PROJECT_CREATED": "Fecha de inicio",
+    "PROJECT_UPDATED": "Última actualización",
+    "PROJECT_UPDATES_TITTLE":"Actualizaciones",
+    "PROJECT_NOTHING_PROJECT":"No se pudo obtener el contenido del proyecto",
+    "PROJECT_TECHNOLOGYS":"Tecnologías Del Proyecto y Lenguajes De Programación Utilizados",
+    "INTERNET_ERROR":"Error de conexión a Internet",
+    "ERROR_BUTTON_RELOAD":"Recargar Página"
 }

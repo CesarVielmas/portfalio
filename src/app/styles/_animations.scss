@@ -123,3 +123,37 @@
                 forwards;
   }
 }
+@mixin animate-loading-loop($state) {
+  @if $state == in {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      width: var(--loading-card-loop-width, var(--global-loop-width));
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+         var(--loading-card-loop-background-color, var(--global-loop-background-color)) 50%,
+        transparent 100%
+      );
+      animation: loading-glint var(--loading-card-loop-duration, var(--global-loop-duration))
+        var(--loading-card-loop-timing, var(--global-loop-timing)) infinite;
+    }
+  }
+
+  @if $state == out {
+    &::before {
+      animation: none;
+    }
+  }
+}
+
+@keyframes loading-glint {
+  0%   { left: -100%; }
+  100% { left: 120%; }
+}

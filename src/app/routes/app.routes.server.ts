@@ -21,5 +21,9 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: 'proyects',
     renderMode:RenderMode.Prerender
+  },
+  {
+    path:'proyects/:name',
+    renderMode:RenderMode.Prerender
   }
 ];

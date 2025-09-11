@@ -75,5 +75,27 @@
         "PHONE_LENGTH_ERROR_PART2": "digits long.",
         "PHONE_NUMBER_ERROR": "The phone number must be a valid number."
     },
-    "TITTLE_TIME_LINE": "My Deployment History"
+    "TITTLE_TIME_LINE": "My Deployment History",
+    "TITTLE_PROJECTS":"Featured Projects",
+    "TOPIC_OTHERS":"Others Projects",
+    "PROJECT_STATE_0": "Project not started.",
+    "PROJECT_STATE_1": "Project barely initiated, requires significant development.",
+    "PROJECT_STATE_2": "Project in very early stages, with basic structure.",
+    "PROJECT_STATE_3": "Project partially developed, many core features missing.",
+    "PROJECT_STATE_4": "Project under development, with initial features in place.",
+    "PROJECT_STATE_5": "Project halfway completed, with main components working.",
+    "PROJECT_STATE_6": "Project mostly functional, requires refinements.",
+    "PROJECT_STATE_7": "Project partially finished with room for improvements.",
+    "PROJECT_STATE_8": "Project almost complete, minor adjustments needed.",
+    "PROJECT_STATE_9": "Project completed and stable, awaiting optimizations.",
+    "PROJECT_STATE_10": "Project fully completed, polished and production ready.",
+    "PROJECT_TECH_USED": "This project utilized: {{techs}}",
+    "PROJECT_WITHOUT_TITTLE":"Unknown Project",
+    "PROJECT_CREATED": "Created on",
+    "PROJECT_UPDATED": "Last updated",
+    "PROJECT_UPDATES_TITTLE":"Updates",
+    "PROJECT_NOTHING_PROJECT":"Project content could not be obtained",
+    "PROJECT_TECHNOLOGYS":"Project Technologies and Programming Languages Used",
+    "INTERNET_ERROR":"Internet Error Connection",
+    "ERROR_BUTTON_RELOAD":"Reload Page"
 }

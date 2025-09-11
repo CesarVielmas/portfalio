@@ -89,49 +89,49 @@ export class NavHeaderMockProvider{
       id: 'react',
       urlImage: 'assets/svg/icon_react.svg',
       contentText: 'React',
-      functionToDo:()=>{this._globalStates.navigateTo('/projects#web#react')}
+      functionToDo:()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'angular',
       urlImage: 'assets/svg/icon_angular.svg',
       contentText: 'Angular',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#web#angular')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'vuejs',
       urlImage: 'assets/svg/icon_vue.svg',
       contentText: 'Vue.js',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#web#vue-js')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'blazor',
       urlImage: 'assets/svg/icon_blazor.svg',
       contentText: 'Blazor',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#web#blazor')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'dotnet_maui',
       urlImage: 'assets/svg/icon_dotnet_maui.svg',
       contentText: '.NET MAUI',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#desktop#net-maui')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'android_studio',
       urlImage: 'assets/svg/icon_android.svg',
       contentText: 'Android Studio',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#mobile#react')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'react_native',
       urlImage: 'assets/svg/icon_react.svg',
       contentText: 'React Native',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#mobile#react-native')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'dotnet',
       urlImage: 'assets/svg/icon_dotnet.svg',
       contentText: '.NET',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#backend#net')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     },
     {
       id: 'sql_server',
@@ -161,7 +161,7 @@ export class NavHeaderMockProvider{
       id: 'wpf',
       urlImage: 'assets/svg/icon_wpf.svg',
       contentText: 'WPF',
-      functionToDo: ()=>{this._globalStates.navigateTo('/projects#desktop#wpf')}
+      functionToDo: ()=>{this._globalStates.requestAnimatedNavigation('/proyects')}
     }
   ];
   private _someTools: Record<string, any>[] = [

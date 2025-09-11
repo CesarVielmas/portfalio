@@ -37,10 +37,10 @@
           <icon-text-wrap-component [iconUrl]="'assets/svg/example_logo.svg'" [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" style="display: contents;"/>
         </div>
         <div class="content" style="height: 30%;flex-direction: row;">
-            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline">
+            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline" (click)="globalStates.redirectURL('https://github.com/CesarVielmas')">
               <icon-text-wrap-component [iconUrl]="'assets/svg/icon_github.svg'" [text]="'CesarVielmas'" [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles" [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles" style="display: contents;"/>
             </div>
-            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline">
+            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline" (click)="globalStates.redirectURL('https://www.linkedin.com/in/cesar-vielmas-324a9b218/')">
               <icon-text-wrap-component [iconUrl]="'assets/svg/icon_linkedin.svg'" [text]="'Cesar Vielmas'" [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles" [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles" style="display: contents;"/>
             </div>
         </div>

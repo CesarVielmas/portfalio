@@ -24,6 +24,6 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path:'proyects/:name',
-    renderMode:RenderMode.Prerender
+    renderMode:RenderMode.Server
   }
 ];

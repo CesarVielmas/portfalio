@@ -23,6 +23,14 @@
           </div>
         </deployment-menu-component>
     }
+@if(!isDesktop){
+  <div class="device-block-warning">
+    <div class="container">
+      <h2>Version Disponible Solo Para Escritorio</h2>
+      <p>Estoy trabajando para brindarte una mejor experiencia en dispositivos móviles. ¡Gracias por tu paciencia!</p>
+    </div>
+  </div>
+}
 <router-outlet></router-outlet>
 @if(animationChangePath()){
   <div class="footer-change-animation" #changePathAnimation>

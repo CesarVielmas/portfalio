@@ -30,7 +30,45 @@
    border-bottom-left-radius: 1vw;
    border-bottom-right-radius: 1vw;
 }
+.device-block-warning{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+.device-block-warning .container{
+    width: 80%;
+    height: 25%;
+    background-color: white;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+.device-block-warning .container h2{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 0;
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    font-size: 4vw;
+    background-color: #0E6A95;
 
+    color: white;
+}
+.device-block-warning .container p{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5%;
+    font-size: 5vw;
+    padding: 0 2vw;
+    color: black;
+}
 .footer-homer{
     position: relative;
     margin-top: auto;

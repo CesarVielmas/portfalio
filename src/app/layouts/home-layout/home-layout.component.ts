@@ -1,6 +1,7 @@
 import { Component, computed, effect, ElementRef, inject, Signal, signal, ViewChild} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnimationPushService } from '@app/core/services/animations-push.service';
+import { DetectDeviceService } from '@app/core/services/detect-device.service';
 import { GlobalStatesService } from '@app/core/services/global-states.service';
 import { DeploymentMenu } from '@app/shared/components/deployment-menu/deployment-menu.component';
 import { HorizontalMenuComponent } from '@app/shared/components/horizontal-menu/horizontal-menu.component';
@@ -20,7 +21,9 @@ export class HomeLayout {
   protected _divChangeLanguage!: ElementRef<HTMLDivElement>;
   @ViewChild('changePathAnimation',{static:false})
   protected _divPathChange!: ElementRef<HTMLDivElement>;
+  protected isDesktop: boolean = false;
   protected globalStates: GlobalStatesService = inject(GlobalStatesService);
+  private detectDeviceService = inject(DetectDeviceService);
   protected _animationChangePath = signal(false);
   protected animationChangePath:Signal<boolean> = computed(()=>this._animationChangePath());
   private _animationPushService:AnimationPushService = inject(AnimationPushService);
@@ -78,6 +81,7 @@ export class HomeLayout {
     underlineTiming:'ease-out'
   }
   constructor() {
+    this.isDesktop = this.detectDeviceService.isDesktop();
     effect(() => {
       const nav = this.globalStates.animatedNavigation();
       if (nav) {

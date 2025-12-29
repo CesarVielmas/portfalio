@@ -7,7 +7,7 @@ export class DetectDeviceService {
 
   isDesktop(): boolean {
     if(!isPlatformBrowser(this.platformId)){
-        return false;
+        return true;
     }
     return window.innerWidth >= 1024;
   }

@@ -1,267 +1,400 @@
-.project-principal{
-    height: auto;
-    width: 100%;
-    background-color: #0E6A95;
-    overflow: hidden;
+// Importación de las fuentes del diseño
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+// Variables extraídas de tu referencia Tailwind
+$bg-color: #0E6A95;
+$surface: #083d56;
+$surface-high: #172c3c;
+$surface-highest: #223748;
+$primary: #7bd0ff;
+$tertiary: #5adace;
+$text-light: #cfe5fb;
+$text-muted: #c1c7d0;
+$border-color: rgba(65, 71, 79, 0.2); // outline-variant
+
+.executive-wrapper {
+    background-color: $bg-color;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    color: $text-light;
 }
 
-.divide-principal{
-    width: 93%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    margin-bottom: 1.5%;
-    border-width: 0.55vh;
-    border-style:solid;
-    border-radius: 0.2vw;
-    border-color: #083d56;
+.executive-container {
+    max-width: 80rem; // max-w-7xl
+    margin: 0 auto;
 }
-.divide-subtittles{
-    width: 93%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    margin-bottom: 1.5%;
-    border-width: 0.55vh;
-    border-style:solid;
-    border-radius: 0.2vw;
-    border-color: transparent;
-    box-shadow: 0px 0px 12px 0px #165678;
+
+/* --- GRID PRINCIPAL --- */
+.executive-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 8fr 4fr; // Equivalente a col-span-8 y col-span-4
+    }
 }
-.proyect-container{
-    height: auto;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+
+/* --- COLUMNA IZQUIERDA (Narrativa) --- */
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
-.proyect-container .tittle-proyect{
-    text-align: center;
-    font-family: 'Poppins';
-    font-weight: 500;
-    color: white;
-    letter-spacing: 0.1vw;
-    font-size: 1.8vw;
-    margin-top: 2%;
-    margin-bottom: 1.5%;
+
+.hero-header {
+    margin-bottom: 1rem;
+
+    .label-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        .line {
+            width: 2rem;
+            height: 2px;
+            background-color: $tertiary;
+        }
+
+        .text {
+            color: $tertiary;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+        }
+    }
+
+    .headline-title {
+        font-family: 'Manrope', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+        color: $text-light;
+        margin: 0;
+    }
+}
+
+/* Cajas de Superficie (El efecto de tarjeta) */
+.box-surface {
+    background-color: $surface;
+    border: 1px solid $border-color;
+    border-radius: 0.75rem; // rounded-xl
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+        padding: 3rem;
+    }
+}
+
+.box-surface-low {
+    background-color: rgba(#061d2d, 0.8);
+    border: 1px solid rgba(65, 71, 79, 0.05);
+    border-radius: 0.75rem;
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+        padding: 3rem;
+    }
+}
+
+/* Tipografía de Contenido */
+.section-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-light;
+    margin-bottom: 1.5rem;
+}
+
+.paragraph-text {
+    color: $text-muted;
+    font-size: 1.125rem; // text-lg
+    line-height: 1.75;
+    margin: 0;
+}
+
+.image-wrapper {
+    padding: 1rem;
+
+    .project-img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+}
+
+/* Listas */
+.list-wrapper {
+    color: $text-muted;
+    font-size: 1.125rem;
+    line-height: 1.75;
+
+    li {
+        margin-bottom: 1rem;
+    }
+
+    .ordered-list {
+        padding-left: 1.5rem;
+        list-style-type: decimal;
+
+        li::marker {
+            color: $primary;
+            font-weight: 600;
+        }
+    }
+
+    .unordered-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .material-icons-simulated {
+            color: $primary;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+    }
+}
+
+/* --- COLUMNA DERECHA (Sidebar) --- */
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: $text-light;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
-.proyect-container .subtittle-proyect{
-    text-align: start;
-    font-family: 'Poppins';
-    font-weight: 500;
-    color: #083d56;
-    letter-spacing: 0.1vw;
-    font-size: 1.65vw;
-    margin-top: 1%;
-    margin-left: 3%;
-    margin-bottom: 1%;
-}
-.proyect-container .image-proyect{
-    height: 70vh;
-    width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0.5vw;
-    margin-bottom: 1.5%;
-}
-.proyect-container .list-content{
-    list-style-type:decimal;
-    color: white;
-}
-.proyect-container .list-content-second{
-    list-style-type:disc;
-    color: white;
-}
-.proyect-container .list-content .content,
-.proyect-container .list-content-second .content{
-    text-align: start;
-    font-family: 'Poppins';
-    font-weight: 300;
-    color: white;
-    letter-spacing: 0.1vw;
-    font-size: 0.9vw;
-    margin-top: 1.5%;
-    width: 93%;
-    margin-left: 4%;
-    margin-bottom: 1%;
-}
-.proyect-container .content-default{
-    text-align: start;
-    font-family: 'Poppins';
-    font-weight: 300;
-    color: white;
-    letter-spacing: 0.1vw;
-    font-size: 0.9vw;
-    margin-top: 1.5%;
-    width: 93%;
-    margin-left: 4%;
-    margin-bottom: 1%;
-}
-.proyect-container .top-technologys {
+
+.status-card {
+    padding: 2rem;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 1.5vw;
-    width: 100%;
-    margin: 1% 0;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .date-row {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: $text-muted;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .value {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: $text-light;
+        }
+    }
 }
-.proyect-container .top-technologys .technology {
-    flex: 1 1 calc(20% - 1.5vw); 
-    height: 6.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 1vw;
-    box-shadow: 0px 0px 12px 0px #165678;
-    border-radius: 0.5vw;
+
+.tech-stack {
+    background-color: $surface-high;
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .tech-card {
+        background-color: $surface-highest;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        .tech-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .tech-name {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: $text-light;
+        }
+    }
 }
-.proyect-container .top-technologys .technology div {
-    flex-shrink: 0;
-    border-radius: 50%;
-    height: 3vh;
-    width: 1.5vw;
+
+.lang-stack {
+    background-color: $surface-high;
+
+    .lang-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .lang-item {
+        .lang-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+
+            .lang-name {
+                color: $text-muted;
+            }
+
+            .lang-percent {
+                color: $text-light;
+            }
+        }
+
+        .progress-track {
+            height: 0.375rem; // h-1.5
+            width: 100%;
+            background-color: $surface;
+            border-radius: 999px;
+            overflow: hidden;
+
+            .progress-fill {
+                height: 100%;
+                border-radius: 999px;
+            }
+        }
+    }
 }
-.proyect-container .top-technologys .technology p {
-    margin: 0;
-    text-transform:capitalize;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1.3vw;
-    color: #083d56;
-    text-align: left;
-    margin-left: 8%;
+
+/* --- ROADMAP / UPDATES --- */
+.roadmap-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-light;
+    margin-bottom: 2.5rem;
 }
-.proyect-container .top-languages {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 2vw;
-    width: 100%;
-    margin: 2.5% 0;
-}
-.proyect-container .top-languages .language {
-    flex: 1 1 calc(31% - 1.5vw); 
-    height: 6.5vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 1vw;
-    border-radius: 0.5vw;
-}
-.proyect-container .top-languages .language .barProgress {
+
+.timeline-container {
     position: relative;
-    flex-shrink: 0;
-    flex: 1;
-    border-radius: 3vw;
-    height: 35%;
-    width: 100%;
-    background-color: #136086;
-    margin-left: 7%;
+
+    .timeline-line {
+        position: absolute;
+        left: 1.5rem; // left-6
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: rgba(140, 145, 154, 0.3); // outline-variant/30
+    }
 }
-.proyect-container .top-languages .language p {
-    margin: 0;
-    text-transform:capitalize;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.3vw;
-    color: #083d56;
-    text-align: left;
-    margin-left: 3%;
+
+.timeline-item {
+    position: relative;
+    padding-left: 4rem; // pl-16
+    margin-bottom: 3rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 1.25rem; // left-5
+        top: 0.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: rgba(140, 145, 154, 0.8);
+        z-index: 10;
+
+        &.latest {
+            left: 1rem; // left-4
+            width: 1rem;
+            height: 1rem;
+            background-color: $bg-color;
+            border: 2px solid $primary;
+        }
+    }
+
+    .timeline-content {
+        .timeline-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: $primary;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: $text-muted;
+            line-height: 1.5;
+            max-width: 42rem; // max-w-2xl
+        }
+    }
 }
-.proyect-container .bottom-dates {
+
+/* Skeleton Loaders Adaptados */
+.skeleton-wrapper {
     display: flex;
-    justify-content: center; 
-    align-items: center;
-    width: 90%;
-    margin: 8% 0% 2% 10%;
-    gap: 7%;
-}
-.proyect-container .bottom-dates .date-init,
-.proyect-container .bottom-dates .date-final {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    height: 8vh;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1.2vw;
-    color: white;
-}
-.proyect-container .bottom-dates .date-init div,
-.proyect-container .bottom-dates .date-final div {
-    flex-shrink: 0;
-    border-radius: 50%;
-    height: 3vh;
-    width: 1.45vw;
-    margin-right: 0.6em; 
-}
-.proyect-container .bottom-dates .date-init div {
-    background-color: rgb(2, 127, 2); 
-    color: rgb(2, 127, 2);
-}
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
 
-.proyect-container .bottom-dates .date-final div {
-    background-color: rgb(88, 14, 7); 
-    color: rgb(88, 14, 7);
-}
-.proyect-container .bottom-dates .date-init p,
-.proyect-container .bottom-dates .date-final p {
-    margin: 0;
-    flex: 1;
-}
-.proyect-container .bottom-dates .date-init {
-    justify-content: center;
-    text-align: left;
-}
+    .skel-hero {
+        height: 100px;
+        width: 60%;
+    }
 
-.proyect-container .bottom-dates .date-final {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    text-align: left;  
-    margin-left: 7%;
-}
+    .skel-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
 
-.proyect-container .bottom-dates .date-final div {
-    margin-right: 0.6em; 
-}
+        @media (min-width: 1024px) {
+            grid-template-columns: 8fr 4fr;
+        }
+    }
 
-.proyect-container .bottom-dates .date-final p {
-    margin: 0; 
-}
-//loading
+    .skel-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 
-.tittle-loading{
-    height: 10vh;
-    width: 65vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    border-radius: 0.5vw;
-    background-color: #136086;
-}
-.principal-image-loading{
-    height: 60vh;
-    width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    border-radius: 0.5vw;
-    background-color: #136086;
-}
-.subtittle-loading{
-    height: 9vh;
-    width: 35vw;
-    margin-left: 4.5%;
-    margin-top: 2%;
-    border-radius: 0.5vw;
-    background-color: #136086;
-}
-.content-loading{
-    height: 20vh;
-    width: 89vw;
-    margin-left: 4.5%;
-    margin-top: 2%;
-    border-radius: 0.5vw;
-    background-color: #136086;
+    .skel-right {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .skel-img {
+        height: 400px;
+    }
+
+    .skel-text {
+        height: 200px;
+    }
+
+    .skel-side {
+        height: 250px;
+    }
 }

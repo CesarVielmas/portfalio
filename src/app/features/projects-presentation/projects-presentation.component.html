@@ -1,161 +1,99 @@
 <div class="projects-principal">
-    <h1 class="tittle-presentation" data-translate="TITTLE_PROJECTS" [typeAnimation]="'appear-text-writing'" [animationStyle]="{'textToAnimate':translate.instant('TITTLE_PROJECTS'),'animationDuration':'2.5s','textTranslated':'TITTLE_PROJECTS'}" #projectsTittle></h1>
+    <h1 class="tittle-presentation" data-translate="TITTLE_PROJECTS" [typeAnimation]="'appear-text-writing'"
+        [animationStyle]="{'textToAnimate':translate.instant('TITTLE_PROJECTS'),'animationDuration':'2.5s','textTranslated':'TITTLE_PROJECTS'}"
+        #projectsTittle></h1>
+
     @if(projectsByApartKeys.length > 0){
     @for (apart of projectsByApartKeys; track apart) {
-        <h2 class="tittle-apart" [id]="apart">{{ apart === 'TOPIC_OTHERS' ? translate.instant('TOPIC_OTHERS') : apart }}</h2>
-        <hr class="projects-divisory" />
-        <div class="projects-cards-flex">
-            @for (proyect of git_proyects()[apart]; track proyect.id) {
-                 <div class="projects-cards" [typeAnimation]="'hover-scale'" [animationStyle]="{'scaleDuration':'0.5s','scaleTiming':'ease-in-out'}" (click)="goToProjectDetail(proyect)">
-                    <img  [src]="getProjectImage(proyect)" alt="{{ proyect.name }}" class="projects-cards-bg"/>
-                    <div class="projects-cards-aparts">
-                        <div class="top-languages">
-                            @for (language of getProjectLanguages(proyect); track language.name){
-                                <div class="language">
-                                    <div></div>
-                                    <p>{{ language.name }}</p>
-                                </div>
-                            }
-                        </div>
-                        <h2 class="tittle-proyect">{{ getProjectTitle(proyect) }}</h2>
-                        <p class="state-proyect">{{ getProjectDescription(proyect) }}</p>
-                        <div class="bottom-dates">
-                            <div class="date-init">
-                                <div></div>
-                                <p>{{ 'PROJECT_CREATED' | translate }}: {{ getProjectDates(proyect).created }}</p>
-                            </div>
-                            <div class="date-final">
-                                <div></div>
-                                <p>{{ 'PROJECT_UPDATED' | translate }}: {{ getProjectDates(proyect).updated }}</p>
-                            </div>
-                        </div>
+    <h2 class="tittle-apart" [id]="apart">{{ apart === 'TOPIC_OTHERS' ? translate.instant('TOPIC_OTHERS') : apart }}
+    </h2>
+    <hr class="projects-divisory" />
+
+    <div class="projects-cards-grid">
+        @for (proyect of git_proyects()[apart]; track proyect.id) {
+        <div class="projects-cards" [typeAnimation]="'hover-scale'"
+            [animationStyle]="{'scaleDuration':'0.4s','scaleTiming':'ease-out'}" (click)="goToProjectDetail(proyect)">
+
+            <div class="card-image-wrapper">
+                <img [src]="getProjectImage(proyect)" alt="{{ proyect.name }}" class="card-image" />
+            </div>
+
+            <div class="card-content">
+                <div class="languages-badges">
+                    @for (language of getProjectLanguages(proyect); track language.name){
+                    <span class="badge">{{ language.name }}</span>
+                    }
+                </div>
+
+                <h3 class="card-title">{{ getProjectTitle(proyect) }}</h3>
+                <p class="card-description">{{ getProjectDescription(proyect) }}</p>
+
+                <div class="card-footer">
+                    <div class="date-badge created">
+                        <span class="dot-green"></span> {{ 'PROJECT_CREATED' | translate }}: {{
+                        getProjectDates(proyect).created }}
                     </div>
-                 </div>
-            }
+                    <div class="date-badge updated">
+                        <span class="dot-red"></span> {{ 'PROJECT_UPDATED' | translate }}: {{
+                        getProjectDates(proyect).updated }}
+                    </div>
+                </div>
+            </div>
         </div>
         }
+    </div>
     }
+    }
+
     @if(projectsByApartKeys.length === 0 && !error_petition()){
-        @for (loading of [0,1,2,3,4]; track loading) {
-          <div class="projects-tittles"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-            <hr class="projects-divisory" />
-            <div class="projects-cards-flex">
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
+    <div class="skeleton-header">
+        <loading-square-component [backgroundInactive]="'rgba(255,255,255,0.1)'" [borderRadius]="'8px'"
+            [backgroundActive]="'rgba(255,255,255,0.2)'" [durationAnimationLoop]="'2s'"
+            [widthAnimationLoop]="'35%'"></loading-square-component>
+    </div>
+    <hr class="projects-divisory" />
+
+    <div class="projects-cards-grid">
+        @for (loading of [0,1,2,3,4,5]; track loading) {
+        <div class="projects-cards skeleton-card">
+            <div class="skeleton-img">
+                <loading-square-component [backgroundInactive]="'#136086'" [borderRadius]="'0'"
+                    [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2s'"
+                    [widthAnimationLoop]="'30%'"></loading-square-component>
+            </div>
+            <div class="skeleton-content">
+                <div class="skel-line skel-title">
+                    <loading-square-component [backgroundInactive]="'#165779'" [borderRadius]="'4px'"
+                        [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'30%'"></loading-square-component>
                 </div>
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
+                <div class="skel-line skel-desc">
+                    <loading-square-component [backgroundInactive]="'#165779'" [borderRadius]="'4px'"
+                        [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'30%'"></loading-square-component>
                 </div>
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
+                <div class="skeleton-footer">
+                    <div class="skel-line skel-date">
+                        <loading-square-component [backgroundInactive]="'#165779'" [borderRadius]="'4px'"
+                            [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2s'"
+                            [widthAnimationLoop]="'30%'"></loading-square-component>
+                    </div>
+                    <div class="skel-line skel-date">
+                        <loading-square-component [backgroundInactive]="'#165779'" [borderRadius]="'4px'"
+                            [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2s'"
+                            [widthAnimationLoop]="'30%'"></loading-square-component>
+                    </div>
                 </div>
             </div>
-            <div class="projects-cards-flex">
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
-                </div>
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
-                </div>
-                <div class="projects-cards">
-                    <loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'">
-                        <div style="height: 60%;width: 100%;margin-top: 35%;">
-                            <div style="background-color: #165779;height: 20%;width: 70%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 50%;width: 90%;margin-left: auto;margin-right: auto;border-radius: 0.2vw;margin-top: 2%;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 5%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                            <div style="background-color: #165779;height: 10%;width: 40%;margin-left: 10%;border-radius: 0.2vw;margin-top: 2%;display: inline-block;">
-                                <loading-square-component  [backgroundInactive]="'#165779'" [borderRadius]="'0.2vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'2.8s'" [widthAnimationLoop]="'30%'"></loading-square-component>
-                            </div>
-                        </div>
-                    </loading-square-component>
-                </div>
-            </div>
-        }
-    }
-    @if(error_petition()){
-        <div style="height: 85vh;width: 95%;" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'20%'}">
-            <internet-error-component/>
         </div>
+        }
+    </div>
+    }
+
+    @if(error_petition()){
+    <div class="error-container" [typeAnimation]="'appear-movement-y-with-opacity'"
+        [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':'0s','movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'20%'}">
+        <internet-error-component />
+    </div>
     }
 </div>

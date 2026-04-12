@@ -1,107 +1,172 @@
-<div class="project-principal">
+<div class="executive-wrapper font-body">
     @if(proyect()){
-        @let structure = projectStructure();
-        <div class="proyect-container">
+    @let structure = projectStructure();
+
+    <div class="executive-container">
         @if (structure.length > 0) {
-            @for (block of structure;let i = $index; track $index;) {
-            @let value = block.value;
-            @switch (block.type) {
+
+        <div class="executive-grid">
+
+            <div class="content-section">
+                @for (block of structure; let i = $index; track $index) {
+                @let value = block.value;
+                @switch (block.type) {
+
                 @case ('h1') {
-                <h1 class="tittle-proyect" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-35%'}">{{value}}</h1>
-                }
-                @case ('h2') {
-                <hr class="divide-principal" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-25%'}" />
-                <h2 class="subtittle-proyect" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-35%'}">{{ value }}</h2>
-                }
-                @case ('img') {
-                    <div class="image-proyect" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-20%'}">
-                        <img [src]="value" alt="project image" style="height: 100%;width: 100%;object-fit:contain;border-radius: 0.5vw;" />
+                <header class="hero-header" [typeAnimation]="'appear-movement-y-with-opacity'"
+                    [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-35%'}">
+                    <div class="label-badge">
+                        <span class="line"></span>
+                        <span class="text">{{ 'PROJECT_CASE.PROJECT_CASE_' + proyect()?.state_proyect | translate |
+                            uppercase }}</span>
                     </div>
+                    <h1 class="headline-title">{{ value }}</h1>
+                </header>
                 }
+
+                @case ('h2') {
+                <h2 class="section-title" [typeAnimation]="'appear-movement-y-with-opacity'"
+                    [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-35%'}">
+                    {{ value }}</h2>
+                }
+
+                @case ('img') {
+                <div class="image-wrapper box-surface" [typeAnimation]="'appear-movement-y-with-opacity'"
+                    [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-20%'}">
+                    <img [src]="value" alt="project image" class="project-img" />
+                </div>
+                }
+
                 @case ('list') {
                 @let items = parseList(value);
-
-                @if (value.trim().startsWith('1.')) {
-                    <ol class="list-content" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-45%'}">
-                    @for (item of items; track item) {
-                        <li class="content">{{ cleanListItem(item) }}</li>
-                    }
+                <div class="box-surface list-wrapper" [typeAnimation]="'appear-movement-y-with-opacity'"
+                    [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-45%'}">
+                    @if (value.trim().startsWith('1.')) {
+                    <ol class="ordered-list">
+                        @for (item of items; track item) {
+                        <li>{{ cleanListItem(item) }}</li>
+                        }
                     </ol>
-                } @else {
-                    <ul class="list-content-second" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-45%'}">
-                    @for (item of items;let i = $index; track $index;) {
-                        <li class="content">{{ cleanListItem(item) }}</li>
-                    }
+                    } @else {
+                    <ul class="unordered-list">
+                        @for (item of items; track item) {
+                        <li>
+                            <span class="material-symbols-outlined text-primary text-xl mt-1">chevron_right</span>
+                            <span>{{ cleanListItem(item) }}</span>
+                        </li>
+                        }
                     </ul>
+                    }
+                </div>
                 }
-                }
+
                 @default {
-                <p class="content-default" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-45%'}">{{ value }}</p>
+                <div class="box-surface" [typeAnimation]="'appear-movement-y-with-opacity'"
+                    [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-45%'}">
+                    <p class="paragraph-text">{{ value }}</p>
+                </div>
                 }
-            }
-            }
-           @let updatesEntries = projectUpdatesEntries();
-            @if (updatesEntries.length > 0) {
-                <hr class="divide-principal" />
-                <section class="updates-container" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-25%'}">
-                    <h2 class="tittle-proyect" style="text-align: start;margin-left: 3%;">🔄 {{"PROJECT_UPDATES_TITTLE" | translate}}</h2>
-                    @for (entry of updatesEntries;let i = $index; track $index;) {
-                    <h3 class="subtittle-proyect" style="margin-left: 4%;">{{ entry[0] }}</h3>
-                    <ul class="list-content-second">
-                        <li class="content" style="margin-left: 4.5%;width: 92%;">{{ entry[1] }}</li>
-                    </ul>
-                    }
-                </section>
-                <hr class="divide-principal"/>
-                <h2 class="tittle-proyect">{{"PROJECT_TECHNOLOGYS" | translate}}</h2>
-                <div style="width: 92%;margin-left: auto;margin-right: auto;">
-                    <div class="top-technologys">
-                        @for(technology of proyect()?.technologys_used;let i = $index; track i;){
-                            <div class="technology" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`${i + 1}s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'35%'}">
-                                <div [style.backgroundColor]="palette[i]"></div>
-                                <p>{{ technology }}</p>
-                            </div>
+                }
+                }
+            </div>
+
+            <aside class="sidebar-section">
+
+                <div class="box-surface status-card">
+                    <div class="date-row">
+                        <span class="label">Created</span>
+                        <span class="value">{{ getProjectDates(proyect()).created }}</span>
+                    </div>
+                    <div class="date-row">
+                        <span class="label">Last Updated</span>
+                        <span class="value">{{ getProjectDates(proyect()).updated }}</span>
+                    </div>
+                </div>
+
+                <div class="box-surface tech-stack">
+                    <h3 class="sidebar-title">{{ "PROJECT_TECHNOLOGYS" | translate }}</h3>
+                    <div class="tech-grid">
+                        @for(technology of proyect()?.technologys_used; let i = $index; track i) {
+                        <div class="tech-card" [typeAnimation]="'appear-movement-y-with-opacity'"
+                            [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearInitDuration':`${i * 0.1}s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'20%'}">
+                            <div class="tech-dot" [style.backgroundColor]="palette[i]"></div>
+                            <span class="tech-name">{{ technology }}</span>
+                        </div>
                         }
                     </div>
-                    <div class="top-languages">
-                        @for(language of getProjectLanguages(proyect());let i = $index;track language.name;){
-                            <div class="language" [typeAnimation]="'appear-movement-y-with-opacity'" [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`${i + 1}s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'35%'}">
-                                <p>{{ language.name }}</p>
-                                <div class="barProgress">
-                                    <div class="appear-width-zero-animation" [style.backgroundColor]="palette[i]" style="height: 100%;border-radius: 1.5vw;--width-zero-appear-duration:2s;--width-zero-appear-timing:ease-out;--width-zero-appear-width: {{ language.percent }};"></div>
-                                    <p style="position: absolute;font-size: 0.7vw;color: white;top: 15%;left: 45%;">{{language.percent}}</p>
+                </div>
+
+                <div class="box-surface lang-stack">
+                    <h3 class="sidebar-title">Language Density</h3>
+                    <div class="lang-list">
+                        @for(language of getProjectLanguages(proyect()); let i = $index; track language.name) {
+                        <div class="lang-item" [typeAnimation]="'appear-movement-y-with-opacity'"
+                            [animationStyle]="{'movementYWithOpacityAppearDuration':'1s','movementYWithOpacityAppearInitDuration':`${i * 0.1}s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'20%'}">
+                            <div class="lang-header">
+                                <span class="lang-name">{{ language.name }}</span>
+                                <span class="lang-percent">{{ language.percent }}</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill appear-width-zero-animation"
+                                    [style.backgroundColor]="palette[i]"
+                                    style="--width-zero-appear-duration:1.5s; --width-zero-appear-timing:ease-out; --width-zero-appear-width: {{ language.percent }};">
                                 </div>
                             </div>
+                        </div>
                         }
                     </div>
                 </div>
-                <div class="bottom-dates">
-                    <div class="date-init">
-                        <div></div>
-                        <p>{{ 'PROJECT_CREATED' | translate }}: {{ getProjectDates(proyect()).created }}</p>
-                    </div>
-                    <div class="date-final">
-                        <div></div>
-                        <p>{{ 'PROJECT_UPDATED' | translate }}: {{ getProjectDates(proyect()).updated }}</p>
+            </aside>
+        </div>
+
+        @let updatesEntries = projectUpdatesEntries();
+        @if (updatesEntries.length > 0) {
+        <section class="roadmap-section box-surface-low" [typeAnimation]="'appear-movement-y-with-opacity'"
+            [animationStyle]="{'movementYWithOpacityAppearDuration':'2s','movementYWithOpacityAppearInitDuration':`0s`,'movementYWithOpacityAppearTiming':'ease-out','movementYWithOpacityAppearDistance':'-25%'}">
+            <h2 class="roadmap-title">🔄 {{ "PROJECT_UPDATES_TITTLE" | translate }}</h2>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                @for (entry of updatesEntries; let i = $index; track $index) {
+                <div class="timeline-item">
+                    <div class="timeline-dot" [class.latest]="i === 0"></div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-date">{{ entry[0] }}</h4>
+                        <p class="timeline-desc">{{ entry[1] }}</p>
                     </div>
                 </div>
-                
-            }
-        } @else {
-            <p>{{"PROJECT_NOTHING_PROJECT" | translate}}</p>
+                }
+            </div>
+        </section>
         }
+        } @else {
+        <p class="empty-state">{{ "PROJECT_NOTHING_PROJECT" | translate }}</p>
+        }
+    </div>
+    } @else {
+    <div class="skeleton-wrapper">
+        <div class="skel-hero"><loading-square-component [backgroundInactive]="'#0b2132'" [borderRadius]="'8px'"
+                [backgroundActive]="'#172c3c'" [durationAnimationLoop]="'2s'"
+                [widthAnimationLoop]="'35%'"></loading-square-component></div>
+        <div class="skel-grid">
+            <div class="skel-left">
+                <div class="skel-box skel-img"><loading-square-component [backgroundInactive]="'#0b2132'"
+                        [borderRadius]="'12px'" [backgroundActive]="'#172c3c'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'35%'"></loading-square-component></div>
+                <div class="skel-box skel-text"><loading-square-component [backgroundInactive]="'#0b2132'"
+                        [borderRadius]="'12px'" [backgroundActive]="'#172c3c'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'35%'"></loading-square-component></div>
+            </div>
+            <div class="skel-right">
+                <div class="skel-box skel-side"><loading-square-component [backgroundInactive]="'#0b2132'"
+                        [borderRadius]="'12px'" [backgroundActive]="'#172c3c'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'35%'"></loading-square-component></div>
+                <div class="skel-box skel-side"><loading-square-component [backgroundInactive]="'#0b2132'"
+                        [borderRadius]="'12px'" [backgroundActive]="'#172c3c'" [durationAnimationLoop]="'2s'"
+                        [widthAnimationLoop]="'35%'"></loading-square-component></div>
+            </div>
         </div>
-    }
-    @else{
-        <div class="tittle-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-        <div class="principal-image-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-        <hr class="divide-principal" />
-        @for (loading of [0,1,2,3]; track loading) {
-            <div class="subtittle-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-            <div class="content-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-            <div class="content-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-            <div class="content-loading"><loading-square-component  [backgroundInactive]="'#136086'" [borderRadius]="'0.5vw'" [backgroundActive]="'#0E6A95'" [durationAnimationLoop]="'3s'" [widthAnimationLoop]="'35%'" /></div>
-            <hr class="divide-subtittles" />
-        }    
+    </div>
     }
 </div>

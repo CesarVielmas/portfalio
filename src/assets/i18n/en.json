@@ -1,56 +1,60 @@
 {
-    "header_home":{
-        "PART_PROYECT_HEADER":"Projects",
-        "PART_CONTACT_HEADER":"Contact",
-        "PART_PROCESS_HEADER":"Deployment",
-        "PART_PROYECT_HEADER_WEB":"WEB",
-        "PART_PROYECT_HEADER_MOBILE":"MOBILE",
-        "PART_PROYECT_HEADER_DESKTOP":"DESKTOP",
-        "PART_PROYECT_HEADER_BACKEND":"BACKEND",
-        "PART_PROYECT_HEADER_OTHERS":"OTHERS",
-        "PART_PROYECT_HEADER_LANGUAGE_ES":"SPANISH",
-        "PART_PROYECT_HEADER_LANGUAGE_EN":"ENGLISH"
+    "PROJECT_CASE": {
+        "PROJECT_CASE_0": "Project not started.",
+        "PROJECT_CASE_1": "Project barely initiated, requires significant development.",
+        "PROJECT_CASE_2": "Project in very early stages, with basic structure.",
+        "PROJECT_CASE_3": "Project partially developed, with many core features missing.",
+        "PROJECT_CASE_4": "Project under development, with initial features in place.",
+        "PROJECT_CASE_5": "Project halfway completed, with main components working.",
+        "PROJECT_CASE_6": "Project almost completed, with tests and polishing pending.",
+        "PROJECT_CASE_7": "Project completed and ready for launch or delivery.",
+        "PROJECT_CASE_8": "Project launched or delivered, currently in maintenance.",
+        "PROJECT_CASE_9": "Project indefinitely paused.",
+        "PROJECT_CASE_10": "Project cancelled."
     },
-    "home_apart":{
-        "PART_PRESENTATION_HEADER":"HELLO WORLD",
-        "PART1_PRESENTATION_HOME":"Hi, I'm Cesar Vielmas",
-        "PART2_PRESENTATION_HOME":"Software Engineer.",
-        "PART_PRESENTATION_CONTENT":"Hi! I’m César Vielmas, a Software Engineer with an insatiable curiosity and a passion for building things that really work. I love taking ideas and transforming them into desktop, mobile, or web applications, always keeping user experience and performance front and center.On a daily basis, I explore new technologies, streamline workflows, and craft small tools that save time and boost productivity.",
-        "SOME_LANGUAGES_TITTLE":"Programming Languages",
-        "some_languages":{
+    "header_home": {
+        "PART_PROYECT_HEADER": "Projects",
+        "PART_CONTACT_HEADER": "Contact",
+        "PART_PROCESS_HEADER": "Deployment",
+        "PART_PROYECT_HEADER_WEB": "WEB",
+        "PART_PROYECT_HEADER_MOBILE": "MOBILE",
+        "PART_PROYECT_HEADER_DESKTOP": "DESKTOP",
+        "PART_PROYECT_HEADER_BACKEND": "BACKEND",
+        "PART_PROYECT_HEADER_OTHERS": "OTHERS",
+        "PART_PROYECT_HEADER_LANGUAGE_ES": "SPANISH",
+        "PART_PROYECT_HEADER_LANGUAGE_EN": "ENGLISH"
+    },
+    "home_apart": {
+        "PART_PRESENTATION_HEADER": "HELLO WORLD",
+        "PART1_PRESENTATION_HOME": "Hi, I'm Cesar Vielmas",
+        "PART2_PRESENTATION_HOME": "Software Engineer.",
+        "PART_PRESENTATION_CONTENT": "Hi! I’m César Vielmas, a Software Engineer with an insatiable curiosity and a passion for building things that really work. I love taking ideas and transforming them into desktop, mobile, or web applications, always keeping user experience and performance front and center.On a daily basis, I explore new technologies, streamline workflows, and craft small tools that save time and boost productivity.",
+        "SOME_LANGUAGES_TITTLE": "Programming Languages",
+        "some_languages": {
             "TITTLE_LANGUAGE_C": "C Language",
             "CONTENT_LANGUAGE_C": "I used C primarily for academic projects and small terminal-based applications without any graphical user interface. It also helped me grasp core programming concepts and terminology, serving as a foundation to adapt more easily to other languages.",
-
             "TITTLE_LANGUAGE_CPP": "C++ Language",
             "CONTENT_LANGUAGE_CPP": "I used C++ for both academic purposes and more advanced projects. I created simple graphical user interfaces and later progressed to building dynamic-link libraries (DLLs), games using external libraries, and other complex applications.",
-
             "TITTLE_LANGUAGE_PYTHON": "Python Language",
             "CONTENT_LANGUAGE_PYTHON": "I have used Python to develop moderately complex applications, including basic games with libraries, websites, web APIs, and various scripts. Its versatility has made it a valuable tool in different areas of development.",
-
             "TITTLE_LANGUAGE_JAVASCRIPT": "JavaScript Language",
             "CONTENT_LANGUAGE_JAVASCRIPT": "JavaScript is one of the core languages I have mastered. I’ve used it extensively across multiple frameworks such as React, Angular, and Vue.js, as well as in vanilla JavaScript projects. It has been central to my front-end and full-stack development experience.",
-
             "TITTLE_LANGUAGE_TYPESCRIPT": "TypeScript Language",
             "CONTENT_LANGUAGE_TYPESCRIPT": "I have used TypeScript in conjunction with frameworks like React, Angular, and Vue.js. Its strong typing and enhanced developer experience have made it a preferred choice for building scalable, maintainable front-end applications.",
-
             "TITTLE_LANGUAGE_CSHARP": "C# Language",
             "CONTENT_LANGUAGE_CSHARP": "C# is another language I’ve gained strong proficiency in. I’ve used it for backend development, desktop applications, and web projects using frameworks such as Blazor, showcasing its power in both enterprise and personal projects.",
-
             "TITTLE_LANGUAGE_KOTLIN": "Kotlin Language",
             "CONTENT_LANGUAGE_KOTLIN": "I am currently learning and using Kotlin for ongoing projects involving Gradle and the Android SDK. Its modern syntax and seamless interoperability with Java make it a promising tool in mobile and backend development.",
-
             "TITTLE_LANGUAGE_R": "R Language",
             "CONTENT_LANGUAGE_R": "I have used R for basic academic projects, primarily involving data analysis. However, I often favor Python due to its extensive libraries and ecosystem for data science and machine learning.",
-
             "TITTLE_LANGUAGE_SQL": "SQL Language",
             "CONTENT_LANGUAGE_SQL": "SQL is my primary language for working with relational databases. I’ve used it in environments such as SQL Server, SQLite, and MySQL, enabling me to perform efficient data modeling, querying, and management.",
-
             "TITTLE_LANGUAGE_JAVA": "Java Language",
             "CONTENT_LANGUAGE_JAVA": "I have used Java for a few desktop applications and plan to revisit it for developing more robust and optimized solutions. Its strong foundations and versatility make it ideal for scalable, professional-grade applications."
         },
-        "SOME_TECHNOLOGYS_TITTLE":"Technologies and Tools",
-        "SOME_TECHNOLOGYS_SUBTITTLE_ONE":"Frequently Technologies",
-        "SOME_TECHNOLOGYS_SUBTITTLE_TWO":"Frequently Tools"
+        "SOME_TECHNOLOGYS_TITTLE": "Technologies and Tools",
+        "SOME_TECHNOLOGYS_SUBTITTLE_ONE": "Frequently Technologies",
+        "SOME_TECHNOLOGYS_SUBTITTLE_TWO": "Frequently Tools"
     },
     "contact_apart": {
         "PART_CONTACT_HEADER": "Contact Me",
@@ -66,7 +70,7 @@
         "FORM_SUCCESS_MESSAGE": "Your message has been sent successfully. I will get back to you as soon as possible.",
         "FORM_ERROR_MESSAGE": "An error occurred while sending your message. Please try again later."
     },
-    "validation_forms":{
+    "validation_forms": {
         "REQUIRED_FIELD": "This field is required.",
         "EMAIL_ERROR": "Please enter a valid email address.",
         "NAME_ERROR": "Only letters and spaces are allowed.",
@@ -76,8 +80,8 @@
         "PHONE_NUMBER_ERROR": "The phone number must be a valid number."
     },
     "TITTLE_TIME_LINE": "My Deployment History",
-    "TITTLE_PROJECTS":"Featured Projects",
-    "TOPIC_OTHERS":"Others Projects",
+    "TITTLE_PROJECTS": "Featured Projects",
+    "TOPIC_OTHERS": "Others Projects",
     "PROJECT_STATE_0": "Project not started.",
     "PROJECT_STATE_1": "Project barely initiated, requires significant development.",
     "PROJECT_STATE_2": "Project in very early stages, with basic structure.",
@@ -90,12 +94,12 @@
     "PROJECT_STATE_9": "Project completed and stable, awaiting optimizations.",
     "PROJECT_STATE_10": "Project fully completed, polished and production ready.",
     "PROJECT_TECH_USED": "This project utilized: {{techs}}",
-    "PROJECT_WITHOUT_TITTLE":"Unknown Project",
+    "PROJECT_WITHOUT_TITTLE": "Unknown Project",
     "PROJECT_CREATED": "Created on",
     "PROJECT_UPDATED": "Last updated",
-    "PROJECT_UPDATES_TITTLE":"Updates",
-    "PROJECT_NOTHING_PROJECT":"Project content could not be obtained",
-    "PROJECT_TECHNOLOGYS":"Project Technologies and Programming Languages Used",
-    "INTERNET_ERROR":"Internet Error Connection",
-    "ERROR_BUTTON_RELOAD":"Reload Page"
+    "PROJECT_UPDATES_TITTLE": "Updates",
+    "PROJECT_NOTHING_PROJECT": "Project content could not be obtained",
+    "PROJECT_TECHNOLOGYS": "Project Technologies and Programming Languages Used",
+    "INTERNET_ERROR": "Internet Error Connection",
+    "ERROR_BUTTON_RELOAD": "Reload Page"
 }

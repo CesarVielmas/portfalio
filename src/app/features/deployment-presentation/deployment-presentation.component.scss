@@ -7,7 +7,8 @@
     background-color: #0E6A95;
     overflow: hidden;
 }
-.tittle-presentation{
+
+.tittle-presentation {
     text-align: center;
     font-family: 'Poppins';
     font-weight: 500;
@@ -17,7 +18,8 @@
     margin-top: 5%;
     margin-bottom: 0;
 }
-.image-presentation{
+
+.image-presentation {
     height: 11vh;
     width: 11vw;
     text-align: center;
@@ -25,7 +27,8 @@
     margin-top: 1%;
     margin-bottom: 0;
 }
-.time-line-presentation .story{
+
+.time-line-presentation .story {
     position: relative;
     display: inline-block;
     height: 50vh;
@@ -40,7 +43,8 @@
     margin-top: 3%;
     box-shadow: 0px 0px 10px 1px #165678;
 }
-.time-line-presentation .story .date{
+
+.time-line-presentation .story .date {
     position: relative;
     top: -5.6%;
     font-family: 'Poppins';
@@ -56,7 +60,8 @@
     color: white;
     font-size: 2vw;
 }
-.time-line-presentation .story .tittle{
+
+.time-line-presentation .story .tittle {
     position: relative;
     top: -4%;
     font-family: 'Poppins';
@@ -67,7 +72,8 @@
     color: #083d56;
     font-size: 1.65vw;
 }
-.time-line-presentation .story .content{
+
+.time-line-presentation .story .content {
     position: relative;
     width: 97%;
     margin-left: auto;
@@ -81,42 +87,47 @@
     color: #083d56;
     font-size: 1.25vw;
 }
-.time-line-presentation .story .image{
+
+.time-line-presentation .story .image {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
 }
-.time-line-presentation .story .image img{
-    height:100%;
+
+.time-line-presentation .story .image img {
+    height: 100%;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
-    object-fit:fill;
+    object-fit: fill;
 }
-.time-line-presentation .story .image .mirror {
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  width: 100%;
-  height: 100%;
 
-  background-size:cover;
-  background-position: center;
-  transform: scaleY(-1);
-  opacity: 0.25;
-  filter: blur(2px);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+.time-line-presentation .story .image .mirror {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    transform: scaleY(-1);
+    opacity: 0.25;
+    filter: blur(2px);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
 }
+
 .time-line-presentation .divisory-storys {
     position: absolute;
     height: 100%;
     width: 2%;
     left: 49.5%;
-    background-color:transparent;
+    background-color: transparent;
 }
-.time-line-presentation .divisory-storys .percentage{
+
+.time-line-presentation .divisory-storys .percentage {
     border-radius: 0.15vw;
     width: 50%;
     background-color: #083d56;
@@ -124,7 +135,8 @@
     margin-left: auto;
     margin-right: auto;
 }
-.time-line-presentation .divisory-storys .circle{
+
+.time-line-presentation .divisory-storys .circle {
     position: absolute;
     display: flex;
     border-radius: 50%;
@@ -135,16 +147,114 @@
     justify-items: center;
     align-items: center;
 }
-.time-line-presentation .divisory-storys .circle img{
+
+.time-line-presentation .divisory-storys .circle img {
     height: 60%;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
-.time-line-presentation .divisory-storys .rootedArea{
+
+.time-line-presentation .divisory-storys .rootedArea {
     position: absolute;
     height: 2.5vh;
     overflow: hidden;
     background-color: #083d56;
     border-radius: 0.2vw;
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividad Total)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .time-line-presentation .story {
+        width: 45%;
+        height: auto;
+        min-height: 40vh;
+        padding-bottom: 20px;
+    }
+    .time-line-presentation .story .tittle {
+        font-size: clamp(16px, 2vw, 24px);
+    }
+    .time-line-presentation .story .content {
+        font-size: clamp(14px, 1.8vw, 20px);
+    }
+    .time-line-presentation .story .date {
+        font-size: clamp(18px, 2.5vw, 28px);
+    }
+    .tittle-presentation {
+        font-size: clamp(24px, 4vw, 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tittle-presentation {
+        font-size: clamp(24px, 6vw, 35px);
+        margin-top: 10%;
+        letter-spacing: normal;
+    }
+    
+    .image-presentation {
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+    .time-line-presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    
+    .time-line-presentation .divisory-storys {
+        display: none !important; /* Ocultar la línea divisoria vertical en móvil */
+    }
+    
+    .time-line-presentation .story {
+        display: block !important;
+        width: 90% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 20px !important;
+        height: auto !important;
+        min-height: 200px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    .time-line-presentation .story .date {
+        font-size: clamp(16px, 5vw, 22px);
+        top: 0;
+        padding: 10px 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        letter-spacing: normal;
+        position: relative;
+    }
+    
+    .time-line-presentation .story .tittle {
+        font-size: clamp(20px, 5.5vw, 26px);
+        top: 0;
+        margin-top: 15px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .time-line-presentation .story .content {
+        font-size: clamp(14px, 4vw, 18px);
+        top: 0;
+        margin-top: 15px;
+        position: relative;
+        z-index: 1;
+        padding: 0 15px;
+    }
+
+    .time-line-presentation .story .image {
+        border-radius: 8px;
+        overflow: hidden;
+    }
 }

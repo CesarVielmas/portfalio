@@ -1,36 +1,97 @@
-.header-home{
+/* =========================================
+   HEADER LAYOUT
+   ========================================= */
+.header-home {
     position: relative;
     width: 100%;
     height: 11%;
+    min-height: 70px;
     background-color: #083d56;
-    overflow: hidden;
+    overflow: visible;
+    /* <--- CAMBIO CRUCIAL: Permite que el menú caiga hacia abajo */
     z-index: 3;
 }
-.apart-header-nav{
+
+/* Contenedor base de los elementos del header */
+.apart-header-nav {
     display: flex;
     height: 100%;
-    width: 100%;
+    align-items: center;
 }
-.menu-language{
+
+/* 1. Zona del Logo */
+.header-logo {
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 3vw;
+}
+
+/* 2. Zona de los Links centrales */
+.header-nav-item {
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+
+    /* VALORES POR DEFECTO (Escritorio y Tablet) */
+    --nav-text-display: block;
+    --nav-icon-size: clamp(20px, 2.3vw, 38px);
+
+    /* AJUSTES PARA CELULAR */
+    @media (max-width: 768px) {
+        --nav-text-display: none;
+        /* Aquí se oculta el texto */
+        --nav-icon-size: 30px;
+        /* El icono crece un poco para ser táctil */
+
+        /* Opcional: Centramos el icono al máximo al no haber texto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* 3. Zona del Idioma */
+.header-language {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Mantiene el icono a la derecha */
+    padding-right: 6vw;
+    /* IMPORTANTE: Quitamos overflow: hidden para que el menú sea visible */
+    overflow: visible !important;
+}
+
+@media (max-width: 768px) {
+    .header-language {
+        padding-right: 15px;
+    }
+}
+
+/* =========================================
+   MENÚ DE IDIOMA Y ADVERTENCIA DE DISPOSITIVO
+   ========================================= */
+.menu-language {
     position: absolute;
     height: 30vh;
     width: 5vw;
     background-color: black;
 }
-.menu-language-apart{
-   flex: 1;
-   display: flex;
-   height: 100%;
-   width: 100%;
-   margin-bottom: 1%;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
-   border-bottom: 2px solid white;
-   border-bottom-left-radius: 1vw;
-   border-bottom-right-radius: 1vw;
+
+.menu-language-apart {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 1%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 2px solid white;
+    border-bottom-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
 }
-.device-block-warning{
+
+.device-block-warning {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -42,41 +103,48 @@
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
 }
-.device-block-warning .container{
+
+.device-block-warning .container {
     width: 80%;
     height: 25%;
     background-color: white;
     border-radius: 1vw;
     overflow: hidden;
 }
-.device-block-warning .container h2{
+
+.device-block-warning .container h2 {
     text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 0;
     margin-bottom: 10%;
     padding-top: 3%;
     padding-bottom: 5%;
     font-size: 4vw;
     background-color: #0E6A95;
-
     color: white;
 }
-.device-block-warning .container p{
+
+.device-block-warning .container p {
     text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 5%;
     font-size: 5vw;
     padding: 0 2vw;
     color: black;
 }
-.footer-homer{
+
+/* =========================================
+   FOOTER LAYOUT Y ANIMACIONES
+   ========================================= */
+.footer-homer {
     position: relative;
     margin-top: auto;
     background-color: #0E6A95;
     width: 100%;
     height: 85vh;
 }
-.footer-content{
+
+.footer-content {
     display: flex;
     flex-wrap: wrap;
     gap: 0;
@@ -88,25 +156,115 @@
     margin-right: auto;
     margin-top: 18%;
 }
-.footer-content .content{
+
+.footer-content .content {
     display: flex;
-    width:100%;
+    width: 100%;
     height: 35%;
     margin-bottom: 1%;
     justify-content: center;
     align-items: center;
 }
-.footer-content .content .div{
+
+.footer-content .content .div {
     flex: 1;
     height: 100%;
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footer-change-animation{
+
+.footer-change-animation {
     position: fixed;
     bottom: 0;
     z-index: 2;
     width: 100%;
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividad para Móvil y Tablet)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Ajustes unificados para Celular y Tablet */
+
+    /* 1. Header en móvil */
+    .header-home {
+        height: 10%;
+        min-height: 60px;
+    }
+
+    .header-logo {
+        flex: 0.5;
+        /* El logo ocupa menos espacio para no empujar el centro */
+        padding-left: 15px;
+    }
+
+    .header-language {
+        flex: 0.5;
+        /* El idioma ocupa menos espacio */
+        padding-right: 15px;
+    }
+
+    .header-nav-item {
+        flex: 1.2;
+        /* Damos prioridad a los iconos centrales */
+    }
+
+    horizontal-menu-component {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* 2. Footer en móvil */
+    .footer-homer {
+        height: auto !important;
+        min-height: 850px !important; /* Safe zone to prevent wave collapse */
+        padding-bottom: 80px;
+    }
+
+    /* Restauramos el flujo normal de la ola para que mantenga sus visuales ricas */
+    .footer-homer ::ng-deep wave-animation-component > div {
+        position: absolute !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .footer-content {
+        position: absolute !important;
+        bottom: 30px !important;
+        top: auto !important;
+        margin-top: 0 !important;
+        left: 5%; /* Centrado con su ancho al 90% */
+        width: 90%;
+        height: auto;
+        flex-direction: column !important;
+        gap: 30px; 
+    }
+
+    /* Cambiamos las filas por columnas para que no se aplaste la información */
+    .footer-content .content {
+        flex-direction: column !important;
+        height: auto;
+        gap: 20px;
+        margin-bottom: 5%;
+    }
+
+    .footer-content .content .div {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Centrar textos de contacto y EVITAR ICONOS GIGANTES */
+    .footer-content .content .div icon-text-wrap-component {
+        justify-content: center !important;
+    }
+
+    .footer-content .content .div ::ng-deep img, 
+    .footer-content .content .div ::ng-deep svg {
+        max-width: 40px !important;
+        max-height: 40px !important;
+        object-fit: contain !important;
+    }
 }

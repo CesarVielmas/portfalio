@@ -1,75 +1,122 @@
 <header class="header-home">
-        <horizontal-menu-component>
-          <div class="apart-header-nav" style="flex: 1;justify-content: center;align-items: center;">
-            <icon-text-wrap-component [iconUrl]="'assets/svg/example_logo.svg'" [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"  [functionToDo]="NavigateToHome" [iconStyle]="{ width: '25%', height: 'auto',marginLeft:'3vw'}"/>
-          </div>
-          @for (element of elementsHeader; track element.id) {
-            <div class="apart-header-nav" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline" style="flex: 1;flex-direction: row;align-items: center;" (click)="NavigationFunction(element.path,element.id,$event)">
-              <icon-text-wrap-component [iconUrl]="element.icon" [text]="element.text" [textStyle]="[styleTextHeader, { color: actualState() === element.id ? '#218ffc' : 'white' }] | mergeStyles" [iconStyle]="[iconStyleHeader, { color: actualState() === element.id ? '#218ffc' : 'white' }] | mergeStyles" style="display: contents;"/>
-            </div>
-          }
-          <div class="apart-header-nav" style="flex: 1;align-items: center;justify-content: end;" #openChangeLanguage>
-            <icon-text-wrap-component [iconUrl]="'language'" [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"  [functionToDo]="OpenChangeLanguage" [iconStyle]="[{ fontSize:'3vw',color:'white',marginRight:'6vw'},{color: openLanguage()?'#218ffc':'white'}] | mergeStyles"/>
-          </div>
-        </horizontal-menu-component>
-  </header>
-    @if(openLanguage()){
-        <deployment-menu-component [elementToAssign]="_divChangeLanguage.nativeElement" [directionMenu]="'bottom-center'" [stylesParent]="{height:'8vw',width:'7vw',backgroundColor:'#083D56',marginLeft:'1vw',borderBottomLeftRadius:'1vw',borderBottomRightRadius:'1vw',boxShadow:'0px 0.4vw 6px #0A4C6B',zIndex:'2'}" [durationAnimation]="'0.5s'">
+  <horizontal-menu-component>
+
+    <div class="apart-header-nav header-logo">
+      <icon-text-wrap-component [iconUrl]="'assets/svg/example_logo.svg'"
+        [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"
+        [functionToDo]="NavigateToHome" [iconStyle]="{ width: 'clamp(45px, 7vw, 85px)', height: 'auto'}" />
+    </div>
+
+    @for (element of elementsHeader; track element.id) {
+    <div class="apart-header-nav header-nav-item" [typeAnimation]="'hover-underline'"
+      [animationStyle]="animationHoverUnderline" (click)="NavigationFunction(element.path,element.id,$event)">
+      <icon-text-wrap-component [iconUrl]="element.icon" [text]="element.text"
+        [textStyle]="[styleTextHeader, { color: actualState() === element.id ? '#218ffc' : 'white' }] | mergeStyles"
+        [iconStyle]="[iconStyleHeader, { color: actualState() === element.id ? '#218ffc' : 'white' }] | mergeStyles"
+        style="display: contents;" />
+    </div>
+    }
+
+    <div class="apart-header-nav header-language">
+
+      <div #openChangeLanguage
+        style="position: relative; width: fit-content; display: flex; justify-content: center; align-items: center;">
+
+        <icon-text-wrap-component [iconUrl]="'language'"
+          [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"
+          [functionToDo]="OpenChangeLanguage"
+          [iconStyle]="[{ fontSize:'clamp(25px, 3vw, 40px)', color:'white'},{color: openLanguage()?'#218ffc':'white'}] | mergeStyles" />
+
+        @if(openLanguage()){
+        <deployment-menu-component [elementToAssign]="_divChangeLanguage.nativeElement"
+          [directionMenu]="'bottom-center'" [stylesParent]="{
+            height: 'clamp(60px, 8vw, 100px)', 
+            width: 'clamp(60px, 7vw, 90px)', 
+            backgroundColor: '#083D56', 
+            borderBottomLeftRadius: '1vw', 
+            borderBottomRightRadius: '1vw', 
+            boxShadow: '0px 0.4vw 6px #0A4C6B', 
+            zIndex: '10',
+            marginLeft: 'clamp(-80px, -4vw, -35px)' 
+          }" [durationAnimation]="'0.5s'">
           <div class="menu-language-apart">
-            <icon-text-wrap-component [iconUrl]="'assets/svg/icon_flag_mexico.svg'" [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }" [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" [functionToDo]="ChangeToSpanish" style="display: contents;"/>
+            <icon-text-wrap-component [iconUrl]="'assets/svg/icon_flag_mexico.svg'"
+              [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"
+              [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" [functionToDo]="ChangeToSpanish"
+              style="display: contents;" />
           </div>
           <div class="menu-language-apart">
-            <icon-text-wrap-component [iconUrl]="'assets/svg/icon_flag_eu.svg'" [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }" [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" [functionToDo]="ChangeToEnglish" style="display: contents;"/>
+            <icon-text-wrap-component [iconUrl]="'assets/svg/icon_flag_eu.svg'"
+              [typeAnimations]="{icon:{typeAnimation:'hover-scale',scaleDuration:'0.5s',scaleTiming:'ease-in-out'} }"
+              [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" [functionToDo]="ChangeToEnglish"
+              style="display: contents;" />
           </div>
         </deployment-menu-component>
-    }
-@if(!isDesktop){
-  <div class="device-block-warning">
-    <div class="container">
-      <h2>Version Disponible Solo Para Escritorio</h2>
-      <p>Estoy trabajando para brindarte una mejor experiencia en dispositivos móviles. ¡Gracias por tu paciencia!</p>
+        }
+      </div>
+
     </div>
-  </div>
-}
+
+  </horizontal-menu-component>
+</header>
+
+
 <router-outlet></router-outlet>
+
 @if(animationChangePath()){
-  <div class="footer-change-animation" #changePathAnimation>
-    <wave-animation-component [startWave]="footerWaveChangePathInit" [precision]="1" [duration]="99999" [colorWave]="'#083d56'" [finalWave]="footerWaveChangePathInit"></wave-animation-component>
-  </div>
+<div class="footer-change-animation" #changePathAnimation>
+  <wave-animation-component [startWave]="footerWaveChangePathInit" [precision]="1" [duration]="99999"
+    [colorWave]="'#083d56'" [finalWave]="footerWaveChangePathInit"></wave-animation-component>
+</div>
 }
+
 <footer class="footer-homer">
   @defer(on viewport){
-    <wave-animation-component [startWave]="footerWaveInit" [precision]="240" [duration]="25000" [colorWave]="'#083d56'" [finalWave]="footerWaveFinal">
-      <div class="footer-content">
-        <div class="content" style="margin-bottom: 7%;">
-          <icon-text-wrap-component [iconUrl]="'assets/svg/example_logo.svg'" [iconStyle]="{objectFit:'contain',maxWidth:'100%',maxHeight:'100%'}" style="display: contents;"/>
+  <wave-animation-component [startWave]="footerWaveInit" [precision]="240" [duration]="25000" [colorWave]="'#083d56'"
+    [finalWave]="footerWaveFinal">
+    <div class="footer-content">
+      <div class="content footer-logo">
+        <icon-text-wrap-component [iconUrl]="'assets/svg/example_logo.svg'"
+          [iconStyle]="{objectFit:'contain', width: 'clamp(100px, 15vw, 200px)', height: 'auto'}"
+          style="display: contents;" />
+      </div>
+
+      <div class="content social-links">
+        <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline"
+          (click)="globalStates.redirectURL('https://github.com/CesarVielmas')">
+          <icon-text-wrap-component [iconUrl]="'assets/svg/icon_github.svg'" [text]="'CesarVielmas'"
+            [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles"
+            [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles"
+            style="display: contents;" />
         </div>
-        <div class="content" style="height: 30%;flex-direction: row;">
-            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline" (click)="globalStates.redirectURL('https://github.com/CesarVielmas')">
-              <icon-text-wrap-component [iconUrl]="'assets/svg/icon_github.svg'" [text]="'CesarVielmas'" [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles" [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles" style="display: contents;"/>
-            </div>
-            <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline" (click)="globalStates.redirectURL('https://www.linkedin.com/in/cesar-vielmas-324a9b218/')">
-              <icon-text-wrap-component [iconUrl]="'assets/svg/icon_linkedin.svg'" [text]="'Cesar Vielmas'" [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles" [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles" style="display: contents;"/>
-            </div>
-        </div>
-        <div class="content" style="height: 35%;flex-direction: row;">
-            <div class="div">
-              <icon-text-wrap-component [iconUrl]="'location_on'" [text]="'Monterrey, Nuevo Leon, Mexico'" [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'1vw',marginLeft:'8%'}] | mergeStyles" [iconStyle]="{fontSize:'2vw',color:'white'}" style="display: contents;"/>
-            </div>
-            <div class="div">
-              <icon-text-wrap-component [iconUrl]="'phone'" [text]="'81 3233 1206'" [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'1vw',marginLeft:'15%',textAlign:'start'}] | mergeStyles" [iconStyle]="{fontSize:'2vw',color:'white'}" style="display: contents;"/>
-            </div>
-            <div class="div">
-              <icon-text-wrap-component [iconUrl]="'email'" [text]="'vielmassalais023@gmail.com'" [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'1vw',marginLeft:'8%'}] | mergeStyles" [iconStyle]="{fontSize:'2vw',color:'white'}" style="display: contents;"/>
-            </div>
+        <div class="div" [typeAnimation]="'hover-underline'" [animationStyle]="animationHoverUnderline"
+          (click)="globalStates.redirectURL('https://www.linkedin.com/in/cesar-vielmas-324a9b218/')">
+          <icon-text-wrap-component [iconUrl]="'assets/svg/icon_linkedin.svg'" [text]="'Cesar Vielmas'"
+            [textStyle]="[styleTextHeader,{fontWeight:'300'}] | mergeStyles"
+            [iconStyle]="[iconStyleHeader,{objectFit:'contain',maxWidth:'60%',maxHeight:'60%'}] | mergeStyles"
+            style="display: contents;" />
         </div>
       </div>
-    </wave-animation-component>
+
+      <div class="content contact-info">
+        <div class="div">
+          <icon-text-wrap-component [iconUrl]="'location_on'" [text]="'Monterrey, N.L.'"
+            [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'clamp(12px, 3.5vw, 16px)', marginLeft:'8%'}] | mergeStyles"
+            [iconStyle]="{fontSize:'clamp(18px, 5vw, 24px)', color:'white'}" style="display: contents;" />
+        </div>
+        <div class="div">
+          <icon-text-wrap-component [iconUrl]="'phone'" [text]="'81 3233 1206'"
+            [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'clamp(12px, 3.5vw, 16px)', marginLeft:'8%'}] | mergeStyles"
+            [iconStyle]="{fontSize:'clamp(18px, 5vw, 24px)', color:'white'}" style="display: contents;" />
+        </div>
+        <div class="div">
+          <icon-text-wrap-component [iconUrl]="'email'" [text]="'vielmassalais023@gmail.com'"
+            [textStyle]="[styleTextHeader,{fontWeight:'300',fontSize:'clamp(12px, 3.3vw, 16px)', marginLeft:'8%'}] | mergeStyles"
+            [iconStyle]="{fontSize:'clamp(18px, 5vw, 24px)', color:'white'}" style="display: contents;" />
+        </div>
+      </div>
+    </div>
+  </wave-animation-component>
   }
-  @placeholder{
-    <p>Footer</p>
-  }
-  @loading{
-    <p>Footer...</p>
-  }
+  @placeholder{ <p>Footer</p> }
 </footer>

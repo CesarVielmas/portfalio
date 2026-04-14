@@ -1,10 +1,11 @@
-.contact-card{
+.contact-card {
     height: 86vh;
     width: 100%;
     overflow: hidden;
     background-color: #0E6A95;
 }
-.contact-card .card-signature{
+
+.contact-card .card-signature {
     position: relative;
     height: 85%;
     margin-top: 3%;
@@ -12,14 +13,16 @@
     margin-left: auto;
     margin-right: auto;
 }
-.contact-card .card-signature .part-information{
+
+.contact-card .card-signature .part-information {
     flex: 2;
     position: relative;
     height: 100%;
     width: 100%;
     background-color: #083d56;
 }
-.contact-card .card-signature .part-information .content{
+
+.contact-card .card-signature .part-information .content {
     position: relative;
     display: flex;
     height: 100%;
@@ -29,14 +32,16 @@
     background-color: #083d56;
     z-index: 1;
 }
-.contact-card .card-signature .part-information .content .contact-image{
+
+.contact-card .card-signature .part-information .content .contact-image {
     height: 88%;
     width: 85%;
     object-fit: cover;
     margin-left: 13%;
     margin-right: auto;
 }
-.contact-card .card-signature .part-information .wave{
+
+.contact-card .card-signature .part-information .wave {
     position: absolute;
     height: 40%;
     width: 100%;
@@ -48,35 +53,40 @@
     z-index: 0;
     overflow: hidden;
 }
-.contact-card .card-signature .part-form{
+
+.contact-card .card-signature .part-form {
     flex: 1.2;
     position: relative;
     height: 100%;
     width: 100%;
     background-color: #0E6A95;
 }
-.contact-card .card-signature .part-form .tittle-form{
-    font-family:'Poppins';
+
+.contact-card .card-signature .part-form .tittle-form {
+    font-family: 'Poppins';
     font-weight: 500;
     color: #083d56;
     text-align: start;
     margin-left: 15%;
     font-size: 2.5vw;
     margin-bottom: 0;
-    letter-spacing:'0.08vw'
+    letter-spacing: '0.08vw'
 }
-.contact-card .card-signature .part-form .form-group{
+
+.contact-card .card-signature .part-form .form-group {
     position: relative;
     width: 100%;
     margin-bottom: 3.5%;
 }
-.contact-card .card-signature .part-form .form-actions{
- height: 6vh;
- width: 60%;
- margin-left: 15%;
- margin-right: auto;
+
+.contact-card .card-signature .part-form .form-actions {
+    height: 6vh;
+    width: 60%;
+    margin-left: 15%;
+    margin-right: auto;
 }
-.contact-card .card-signature .part-form .form-actions .button{
+
+.contact-card .card-signature .part-form .form-actions .button {
     height: 100%;
     width: 100%;
     border: none;
@@ -89,24 +99,61 @@
     font-weight: 300;
     font-size: 1vw;
 }
-.contact-card .card-signature .part-form .form-group .label{
+
+.contact-card .card-signature .part-form .form-group .label {
     font-size: 1.4vw;
     font-weight: 500;
     color: #083d56;
-    font-family:'Poppins';
-    text-align:center;
-    margin-left:3%;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-left: 3%;
 }
-.contact-card .card-signature .part-form .form-group .errorMessage{
-    position: absolute;
+
+.contact-card .card-signature .part-form .form-group .errorMessage {
+    position: absolute !important;
     width: 100%;
     background-color: rgb(139, 20, 20);
-    height: 80%;
-    top: 80%;
-    border-radius: 0.2vw;
-    z-index: 0;
+    height: auto !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 8px !important;
+    z-index: 10 !important;
+    padding: 2px 0 !important;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3) !important;
+    overflow: hidden;
 }
-.contact-card .card-signature .part-form .form-group .div-input{
+
+.contact-card .card-signature .part-form .form-group .errorMessage div {
+    top: auto !important;
+    padding: 4px 0 !important;
+}
+
+.contact-card .card-signature .part-form .form-group .errorMessage p {
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+    color: white !important;
+    margin: 0 !important;
+}
+
+/* Fix phone input inline errors to match the elegant new setup */
+.contact-card .card-signature .part-form .form-group ::ng-deep phone-input > div > div:nth-of-type(2),
+.contact-card .card-signature .part-form .form-group ::ng-deep phone-input > div > div:nth-of-type(3) {
+    position: absolute !important;
+    height: auto !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+    padding: 6px 0 !important;
+    z-index: 10 !important;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3) !important;
+}
+
+.contact-card .card-signature .part-form .form-group ::ng-deep phone-input span,
+.contact-card .card-signature .part-form .form-group ::ng-deep phone-input p {
+    font-size: clamp(12px, 1.2vw, 14px) !important;
+}
+
+.contact-card .card-signature .part-form .form-group .div-input {
     display: flex;
     align-items: center;
     position: relative;
@@ -120,7 +167,8 @@
     letter-spacing: 0.1vw;
     background-color: #0E6A95;
 }
-.contact-card .card-signature .part-form .form-group .div-input .input{
+
+.contact-card .card-signature .part-form .form-group .div-input .input {
     width: 95%;
     height: 100%;
     border: none;
@@ -132,7 +180,8 @@
     z-index: 1;
     padding-left: 5%;
 }
-.form-message{
+
+.form-message {
     height: 2vh;
     width: 100%;
     text-align: center;
@@ -143,6 +192,141 @@
     letter-spacing: 0.2vw;
     margin-top: 1%;
 }
-.form-message .error{
+
+.form-message .error {
     color: rgb(109, 15, 15);
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividad Total)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .contact-card {
+        height: auto !important;
+        min-height: 100vh;
+        padding-bottom: 50px;
+        overflow: visible !important;
+    }
+    
+    .contact-card .card-signature {
+        height: auto !important;
+        width: 90% !important;
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+        background-color: transparent !important;
+    }
+
+    /* FIX DEFINITIVO: Apilar elementos dentro de standard-card-component */
+    .contact-card .card-signature ::ng-deep .card {
+        flex-direction: column !important;
+        height: auto !important;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: transparent !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+
+    .contact-card .card-signature .part-information {
+        flex: none !important;
+        width: 100% !important;
+        height: 250px !important;
+    }
+
+    .contact-card .card-signature .part-information .content {
+        width: 100% !important;
+        padding: 20px 0 !important;
+    }
+
+    .contact-card .card-signature .part-information .content .contact-image {
+        margin-left: 0 !important;
+        width: 60% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Ocultar la ola que parte el diseño a la mitad en móviles */
+    .contact-card .card-signature .part-information .wave {
+        display: none !important;
+    }
+
+    .contact-card .card-signature .part-form {
+        flex: none !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 30px 20px !important;
+        box-sizing: border-box !important;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: -20px !important;
+        z-index: 2;
+    }
+
+    .contact-card .card-signature .part-form .tittle-form {
+        font-size: clamp(24px, 6vw, 32px) !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 25px !important;
+        letter-spacing: normal !important;
+    }
+
+    .contact-card .card-signature .part-form .form-actions {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: 50px !important;
+        margin-top: 30px !important;
+    }
+
+    .contact-card .card-signature .part-form .form-actions .button {
+        font-size: 18px !important;
+        letter-spacing: normal !important;
+        border-radius: 8px !important;
+    }
+
+    .contact-card .card-signature .part-form .form-group {
+        margin-bottom: 20px !important;
+    }
+
+    .contact-card .card-signature .part-form .form-group .label {
+        font-size: 16px !important;
+        margin-left: 0 !important;
+        text-align: left !important;
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+
+    .contact-card .card-signature .part-form .form-group .div-input,
+    .contact-card .card-signature .part-form .form-group ::ng-deep phone-input > div {
+        width: 100% !important;
+        height: 45px !important;
+        font-size: 16px !important;
+        letter-spacing: normal !important;
+        border-radius: 8px !important;
+        /* Distinguir los inputs del fondo en móvil */
+        background-color: #0c577a !important; 
+        border: 1px solid #7bd0ff !important;
+        box-shadow: none !important;
+    }
+
+    .contact-card .card-signature .part-form .form-group .div-input .input,
+    .contact-card .card-signature .part-form .form-group ::ng-deep phone-input input {
+        font-size: 16px !important;
+        letter-spacing: normal !important;
+        color: white !important;
+        background-color: transparent !important;
+    }
+
+    .contact-card .card-signature .part-form .form-group ::ng-deep phone-input p {
+        color: white !important;
+    }
+
+    .form-message {
+        font-size: 14px !important;
+        height: auto !important;
+        padding: 10px 0 !important;
+        letter-spacing: normal !important;
+    }
 }

@@ -1,6 +1,10 @@
 .card{
     display: flex;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 100%;
-    overflow: hidden;
+    max-width: 100%;
+    min-width: 0;          /* Permite que el flex item se encoja correctamente */
+    overflow: hidden;      /* Contiene el contenido sin desbordamiento */
+    box-sizing: border-box;
 }
